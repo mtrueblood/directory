@@ -1,0 +1,17 @@
+.footer {
+    background-color: rgba(0,0,0,1);
+    position: fixed;
+    bottom: 0;
+    min-height: 73px;
+    width: 100%;
+
+    nav {
+        a {
+            display: block;
+            float: left;
+            width: 33.333333333%;
+            text-align: center;
+            padding-top: 20px;
+        }
+    }
+}
