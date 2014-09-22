@@ -5,7 +5,6 @@ console.log("Doc ready");
     var winWidth = $(window).width();
     console.log("Height: "+winHeight+" Width: "+winWidth);
 
-
     // set height of setting menu
     $(".settings-menu").css("height",winHeight);
     $(".side-panel").css("height",winHeight);
