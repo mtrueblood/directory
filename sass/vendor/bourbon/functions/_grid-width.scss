@@ -1,0 +1,17 @@
+// This is set for the global use, no need to re-define them again in each separate module.scss files.
+$gw-column: 100px;
+$gw-gutter: 40px;
+
+@function grid-width($n) {
+  @return ($n * $gw-column) + ($n - 1) * $gw-gutter;
+}
+
+// The $gw-column and $gw-gutter variables must be defined in your base stylesheet to properly use the grid-width function.
+//
+//  $gw-column: 100px;         // Column Width
+//  $gw-gutter: 40px;          // Gutter Width
+//
+//  div {
+//    width: grid-width(4);    // returns 520px;
+//    margin-left: $gw-gutter; // returns 40px;
+//  }

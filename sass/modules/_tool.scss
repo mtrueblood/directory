@@ -1,0 +1,22 @@
+.main-container .tool-set .tool {
+	list-style: none;
+	padding: 20px 0;
+	font-size: 1.2em;
+	text-align: center;
+	float: left;
+	width: 100%;
+	cursor: pointer;
+	-webkit-transition: background-color 0.5s ease;
+	transition: background-color 0.5s ease;
+	color: $dark-theme-primary-color;
+
+	span {
+		font-size: 3em;
+		display: block;
+		margin-bottom: 12px;
+	}
+}
+
+.main-container .tool-set .tool:hover {
+	background: $sapient-primary-red;
+}

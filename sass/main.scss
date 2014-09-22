@@ -1,0 +1,53 @@
+// Susy settings
+$legacy-support-for-ie: false;
+$legacy-support-for-ie6: false;
+$legacy-support-for-ie7: false;
+$total-columns: 12; // 12 columns
+$column-width: 60px; // columns are 4em wide
+$gutter-width: 20px; // with 1em gutters
+$grid-padding: 10px; // and 1em padding on the grid container
+
+// Mixins
+@import "vendor/susy/susy";
+@import "vendor/bourbon/bourbon";
+@import "compass/css3";
+@import "compass/reset/utilities";
+
+// THEME BACKGROUNDS
+$black-theme-back: #000000;
+$dark-theme-back: #535353;
+$light-theme-back: #eeeeee;
+$white-theme-back: #ffffff;
+
+// Font Colors
+$dark-theme-primary-color: #FFFFFF;
+$dark-theme-tertiary-color: #f7f7f7;
+$light-theme-primary-color: #535353;
+$light-theme-tertiary-color: #86888B;
+$sapient-primary-red: #de2728;
+$sapient-primary-darkred: #bf2122;
+
+// Font Sizes
+$large-font-size: 24px;
+$primary-font-size: 13px;
+$small-font-size: 9px;
+
+// Line Height
+$large-line-height: 30px;
+$primary-line-height: 19px;
+$small-line-height: 13px;
+
+// Font Families
+$heading-font: '';
+$subhead-font: '';
+$paragraph-font: '';
+$tertiary-font: '';
+
+// Container Sizes
+$default-min-width: 960px;
+$default-max-width: 1260px;
+$default-content-size: 1024px;
+
+// Import partials, modules.
+@import "partials/fonts";
+@import "modules/base";

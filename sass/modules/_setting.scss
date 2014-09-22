@@ -1,0 +1,11 @@
+.settings-menu .settings .setting {
+	list-style: none;
+	padding: 20px;
+	color: $dark-theme-primary-color;
+	border-top: 1px solid $sapient-primary-darkred;
+	cursor: pointer;
+}
+
+.settings-menu .settings .setting:hover {
+	background-color: $sapient-primary-darkred;
+}
