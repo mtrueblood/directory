@@ -1,7 +1,7 @@
 Sapient Office Directory App
 ============================
 
-## Getting the ball rollings ##
+## Getting the ball rolling. i love git ##
 Just wanted to get something rolling and give everyone access to it. Feel free to use this or implement something different. Simply just wanted to get the ball rolling.
 
 ## Structure ##
