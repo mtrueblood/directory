@@ -1,14 +1,11 @@
 .content-wrapper {
-	background-image: url('../images/home-background.jpg');
-	background-repeat: no-repeat;
-	background-size: cover;
-	width: 100%;
-	display: inline;
-	position: fixed;
+    background-image: url('../images/home-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    display: inline;
+    position: fixed;
     right: 0;
     height: 100%;
-    -webkit-box-shadow:  -2px 0px 1px 0px rgba(0, 0, 0, 0.2);
-        moz-box-shadow:  -2px 0px 1px 0px rgba(0, 0, 0, 0.2);
-          o-box-shadow:  -2px 0px 1px 0px rgba(0, 0, 0, 0.2);
-            box-shadow:  -2px 0px 1px 0px rgba(0, 0, 0, 0.2);
+    @include box-shadow(-2px, 0px, 1px 0px, rgba(0, 0, 0,.2));
 }
