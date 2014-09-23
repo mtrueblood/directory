@@ -1,12 +1,5 @@
 "use strict";
 
-/* Vanilla JS FadeIn / FadeOut */
-// arguments  (out || in, element, duration, forceIE support true || false)
-// usage: fade('in', el, 200, true);
-//        fade('out', el, 750, true);
-
-function fade(e,t,n,r){function a(){s=i?s+u:s-u;n.style.opacity=s;if(r){n.style.filter="alpha(opacity="+s*100+")";n.style.filter="progid:DXImageTransform.Microsoft.Alpha(Opacity="+s*100+")"}if(s<=0||s>=1)window.clearInterval(f);if(s<=0)n.style.display="none"}var i=e==="in",s=i?0:1,o=50,u=o/t;if(i){n.style.display="block";n.style.opacity=s;if(r){n.style.filter="alpha(opacity="+s+")";n.style.filter="progid:DXImageTransform.Microsoft.Alpha(Opacity="+s+")"}}var f=window.setInterval(a,o)}
-
 !function() {
 
     var w = window
@@ -15,15 +8,29 @@ function fade(e,t,n,r){function a(){s=i?s+u:s-u;n.style.opacity=s;if(r){n.style.
         , g = d.getElementsByTagName('body')[0]
         , winWidth = w.innerWidth || e.clientWidth || g.clientWidth
         , winHeight = w.innerHeight|| e.clientHeight|| g.clientHeight
-        , landingContainer = document.querySelector('.landing')
+        , landingContainer = '.landing'
         ;
 
+
     // Fade-Out Sapient Landing
-    setTimeout(function(){ fade('out', 500, landingContainer, true) }, 2000);
+    setTimeout(function(){ $(landingContainer).fadeOut(200) }, 2000);
 
     // Initialize Parse Application
     Parse.initialize("uNtjzJdbGtEmC5n6ZoB3MkYbdlB23i5qeXejOT0O", "N1wO2Ceogq6ZPld1F6J6N4I6q6P4K8UXgWmI1yyu");
 
+    [].forEach.call(document.querySelectorAll('nav a'), function(el) {
+        el.addEventListener('click', function(e) {
+            e.preventDefault();
+            var that = this;
+            var section = '.' + that.getAttribute('data-section');
+            var allSections = '.section';
+
+            $('.section').fadeOut(200).promise().done(function(){
+                $(section).fadeIn(200);
+            })
+
+        });
+    });
 
 
     // settings nav icon click

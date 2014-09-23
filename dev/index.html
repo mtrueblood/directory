@@ -35,11 +35,6 @@
 
                 <div class="wrapper">
 
-                    <header class="header">
-                        <div class="settings-nav-icon"><span class="icon icon-menu2"></span></div>
-                        <div class="side-nav-icon"><span class="icon icon-menu"></span></div>
-                    </header>
-
                     <div class="main-container">
                         <h1>Detroit</h1>
 
@@ -47,13 +42,25 @@
 
                         </div>
 
+                        <div class="directory section">
+
+                        </div>
+
+                        <div class="info section">
+
+                        </div>
+
+                        <div class="checkin section">
+
+                        </div>
+
                     </div>
 
                     <footer class="footer">
                         <nav>
-                            <a href="#"><i class="icon-user"></i><span>directory</span></a>
-                            <a href="#"><i class="icon-checkmark"></i><span>check-in</span></a>
-                            <a href="#"><i class="icon-info"></i><span>info</span></a>
+                            <a href="#" data-section="directory"><i class="icon-user"></i><span>directory</span></a>
+                            <a href="#checkin" data-section="checkin"><i class="icon-checkmark"></i><span>check-in</span></a>
+                            <a href="#info" data-section="info"><i class="icon-info"></i><span>info</span></a>
                         </nav>
                     </footer>
 
@@ -61,16 +68,13 @@
 
             </article>
 
-            <aside class="side-panel">
-
-            </aside>
-
         </section>
 
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src=assets/scripts/vendors/jquery-1.10.2.min.js"><\/script>')</script>
         <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.3.0.min.js"></script>
+        <script src="assets/scripts/vendors/q.js"></script>
         <script src="assets/scripts/main.js"></script>
 
 
