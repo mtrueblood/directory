@@ -1,17 +1,27 @@
-$( document ).ready(function() {
-console.log("Doc ready");
+"use strict";
 
-    var winHeight = $(window).height();
-    var winWidth = $(window).width();
-    console.log("Height: "+winHeight+" Width: "+winWidth);
+/* Vanilla JS FadeIn / FadeOut */
+// arguments  (out || in, element, duration, forceIE support true || false)
+// usage: fade('in', el, 200, true);
+//        fade('out', el, 750, true);
 
-    $('.landing').delay(2000).fadeOut();
+function fade(e,t,n,r){function a(){s=i?s+u:s-u;n.style.opacity=s;if(r){n.style.filter="alpha(opacity="+s*100+")";n.style.filter="progid:DXImageTransform.Microsoft.Alpha(Opacity="+s*100+")"}if(s<=0||s>=1)window.clearInterval(f);if(s<=0)n.style.display="none"}var i=e==="in",s=i?0:1,o=50,u=o/t;if(i){n.style.display="block";n.style.opacity=s;if(r){n.style.filter="alpha(opacity="+s+")";n.style.filter="progid:DXImageTransform.Microsoft.Alpha(Opacity="+s+")"}}var f=window.setInterval(a,o)}
 
-    // set height of setting menu
-    $(".settings-menu").css("height",winHeight);
-    $(".side-panel").css("height",winHeight);
+!function() {
+
+    var w = window,
+        d = document,
+        e = d.documentElement,
+        g = d.getElementsByTagName('body')[0],
+        winWidth = w.innerWidth || e.clientWidth || g.clientWidth,
+        winHeight = w.innerHeight|| e.clientHeight|| g.clientHeight;
+
+    var landingContainer = document.querySelector('.landing');
+
+    setTimeout(function(){ fade('out', 500, landingContainer, true) }, 2000);
 
     // settings nav icon click
+    /*
     $(document).on("click",".settings-nav-icon",function() {
         $this = $(this);
         if(!($this).hasClass("open")) {
@@ -60,8 +70,12 @@ console.log("Doc ready");
             $('.side-panel').html("");
         });
     });
+*/
 
-});
+
+}();
+
+
 (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
 function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
 e=o.createElement(i);r=o.getElementsByTagName(i)[0];
