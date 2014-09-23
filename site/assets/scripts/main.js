@@ -5,6 +5,8 @@ console.log("Doc ready");
     var winWidth = $(window).width();
     console.log("Height: "+winHeight+" Width: "+winWidth);
 
+    $('.landing').delay(2000).fadeOut();
+
     // set height of setting menu
     $(".settings-menu").css("height",winHeight);
     $(".side-panel").css("height",winHeight);
@@ -16,7 +18,7 @@ console.log("Doc ready");
             $('.side-panel').animate({ width: "0%", opacity: 0 }, 'slow', function() {
                 $('.side-panel').removeClass("open");
                 $('.side-panel').html("");
-            });  
+            });
             $('.settings-menu').animate({ width: "25%", opacity: 1 }, 'slow', function() {});
             $('.content-wrapper').animate({ width: "75%" }, 'slow', function() {});
             $(this).addClass("open");
@@ -48,7 +50,7 @@ console.log("Doc ready");
             $('.side-panel').animate({ width: "80%", opacity: 1 }, 'fast', function() {
                 $('.side-panel').addClass("open");
                 $('.side-panel').load('includes/'+tool+'.html');
-            });  
+            });
         }
     });
 
@@ -56,10 +58,17 @@ console.log("Doc ready");
         $('.side-panel').animate({ width: "0%", opacity: 0 }, 'slow', function() {
             $('.side-panel').removeClass("open");
             $('.side-panel').html("");
-        });  
+        });
     });
 
 });
+(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+e.src='//www.google-analytics.com/analytics.js';
+r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+ga('create','UA-XXXXX-X');ga('send','pageview');
+
 (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
 function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
 e=o.createElement(i);r=o.getElementsByTagName(i)[0];

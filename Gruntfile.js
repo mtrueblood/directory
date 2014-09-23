@@ -8,12 +8,12 @@ module.exports = function(grunt) {
 
         working_base_folder: 'site',
         dev_base_folder: 'dev',
-        
+
         // server port
         dev_server_port: 8888,
 
         // Folder
-		working_site_folder: 'directory/site',
+        working_site_folder: 'directory/site',
 
         pkg: grunt.file.readJSON('package.json'),
         banner: '/*! ' + [
@@ -41,7 +41,7 @@ module.exports = function(grunt) {
             dev: [
                 '<%= working_base_folder %>/assets/scripts/global.js',
                 '<%= working_base_folder %>/assets/styles/**/*.css',
-                '<%= dev_base_folder %>/',
+                '<%= dev_base_folder %>/'
             ],
         },
 
