@@ -19,6 +19,9 @@ $dark-theme-back: #535353;
 $light-theme-back: #eeeeee;
 $white-theme-back: #ffffff;
 
+// Font Family
+$fontDefault: 'Lato', sans-serif !default;
+
 // Font Colors
 $dark-theme-primary-color: #FFFFFF;
 $dark-theme-tertiary-color: #f7f7f7;
@@ -31,6 +34,8 @@ $sapient-primary-darkred: #bf2122;
 $large-font-size: 24px;
 $primary-font-size: 13px;
 $small-font-size: 9px;
+
+$font60: 4.615rem;
 
 // Line Height
 $large-line-height: 30px;
