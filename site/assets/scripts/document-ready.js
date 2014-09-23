@@ -1,9 +1,16 @@
-$( document ).ready(function() {
-console.log("Doc ready");
+"use strict";
 
-    var winHeight = $(window).height();
-    var winWidth = $(window).width();
-    console.log("Height: "+winHeight+" Width: "+winWidth);
+!function() {
+
+    var w = window,
+        d = document,
+        e = d.documentElement,
+        g = d.getElementsByTagName('body')[0],
+        x = w.innerWidth || e.clientWidth || g.clientWidth,
+        y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+
+
+    console.log("Height: "+y+" Width: "+x);
 
     $('.landing').delay(2000).fadeOut();
 
@@ -60,6 +67,14 @@ console.log("Doc ready");
             $('.side-panel').html("");
         });
     });
+
+
+}();
+
+$( document ).ready(function() {
+console.log("Doc ready");
+
+
 
 });
 (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
