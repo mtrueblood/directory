@@ -9,9 +9,6 @@
         x = w.innerWidth || e.clientWidth || g.clientWidth,
         y = w.innerHeight|| e.clientHeight|| g.clientHeight;
 
-
-    console.log("Height: "+y+" Width: "+x);
-
     $('.landing').delay(2000).fadeOut();
 
     // set height of setting menu
