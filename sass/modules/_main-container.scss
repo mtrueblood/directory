@@ -45,8 +45,8 @@
     }
 
     .directory {
-        height: 64%;
-        padding-bottom: 74px;
+        height: 56%;
+        padding-bottom: 84px;
         @include alpha-attribute('background-color', rgba(white, 1), white);
 
         ul {
