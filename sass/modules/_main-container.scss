@@ -41,10 +41,92 @@
         top: 139px;
         z-index: 99;
         display: none;
+        overflow-y: auto;
     }
 
     .directory {
+        height: 64%;
+        padding-bottom: 74px;
         @include alpha-attribute('background-color', rgba(white, 1), white);
+
+        ul {
+            margin: 0;
+            padding: 0;
+            li {
+                list-style: none;
+                display: block;
+                width: 100%;
+                clear: both;
+                float: left;
+                margin: 0 0 -3px 0;
+                cursor: pointer;
+
+                &.active {
+                    background-color: #262626;
+                    color: #fff;
+                    .user {
+                        border-right: 10px solid #34b934;
+                    }
+                }
+
+                &.inactive {
+                    background-color: #262626;
+                    color: #fff;
+                    .user {
+                        border-right: 10px solid #ff0000;
+                    }
+                }
+
+                &.active-new {
+                    background-color: #eeeeee;
+                    .user {
+                        border-right: 10px solid #34b934;
+                    }
+
+                    &:hover {
+                        background-color: #393939;
+                        color: #fff;
+                    }
+                }
+
+                &:hover {
+                    background-color: #393939;
+                    color: #fff;
+                }
+
+
+
+                span {
+                    display: inline-block;
+                    text-align: left;
+
+                    &.user {
+                        float: left;
+                        width: 77px;
+                    }
+
+                    &.title {
+                        width: 66%;
+                        float: left;
+                        font-size: 0.7692rem;
+                        padding-left: 20px;
+                        text-transform: uppercase;
+                    }
+                    &.name {
+                        width: 66%;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        font-weight: 300;
+                        float: left;
+                        padding-left: 20px;
+                        padding-top: 8px;
+                        font-size: $font18;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
     }
 
     .checkin {
