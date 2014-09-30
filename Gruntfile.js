@@ -37,6 +37,18 @@ module.exports = function(grunt) {
             },
         },
 
+        jst: {
+          compile: {
+
+             options: {
+                amd: true
+            },
+            files: {
+              "<%= working_base_folder %>/assets/scripts/templates.js": ["<%= working_base_folder %>/assets/scripts/templates/*.html"]
+            }
+          }
+        },
+
         clean: {
             dev: [
                 '<%= working_base_folder %>/assets/scripts/global.js',
@@ -247,6 +259,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-open');
     grunt.loadNpmTasks('grunt-banner');
     grunt.loadNpmTasks('grunt-includes');
+    grunt.loadNpmTasks('grunt-contrib-jst');
 
     // Default task
     grunt.registerTask('default', 'runs my tasks', function () {
@@ -258,6 +271,7 @@ module.exports = function(grunt) {
             'csslint:dev',
             'usebanner:dev',
             'includes',
+            'jst',
             'copy:dev',
         ];
         grunt.option('force', true);
