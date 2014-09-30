@@ -88,8 +88,8 @@ var directory = (function () {
             $(document).on('keyup keypress focus focusin focusout', '.search input', function () {
                 var filter = $(this).val(); // get the value of the input, which we filter on
                 $('.directory li').find("span.name:not(:contains(" + filter + "))").closest('li').slideUp();
-                 $('.directory li').find("span.name:contains(" + filter + ")").closest('li').slideDown();
-              });
+                $('.directory li').find("span.name:contains(" + filter + ")").closest('li').slideDown();
+            });
 
             // Nav Menu Event Handler
             [].forEach.call(document.querySelectorAll('nav a'), function(el) {
