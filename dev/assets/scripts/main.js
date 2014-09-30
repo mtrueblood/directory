@@ -26,6 +26,7 @@ var directory = (function () {
             var UserData = Parse.Object.extend("directory_data");
             var query = new Parse.Query(UserData);
             var that = this;
+            query.ascending("lName");
             query.find({
               success: function(results) {
                 console.log("Successfully retrieved " + results.length + " users.");
