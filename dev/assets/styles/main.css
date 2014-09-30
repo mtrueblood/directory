@@ -1,4 +1,3 @@
-/*! Sapient office directory containing locations, travelers, directory and food. v0.0.1 | Copyright (c) 2014 | Tue, 30 Sep 2014 13:12:14 EDT */
 @font-face {
   font-family: 'icomoon';
   src: url("fonts/icomoon.eot?-f033ky");
@@ -2870,18 +2869,26 @@ body {
   display: inline-block;
   cursor: pointer;
 }
-/* line 170, ../../../sass/modules/_main-container.scss */
-.main-container .directory ul li span.phone, .main-container .directory ul li span.email {
+/* line 171, ../../../sass/modules/_main-container.scss */
+.main-container .directory ul li span.office, .main-container .directory ul li span.phone, .main-container .directory ul li span.email {
   clear: both;
   width: 100%;
-  padding: 8px 0 0 20px;
+  padding: 0px 0 0 20px;
 }
-/* line 183, ../../../sass/modules/_main-container.scss */
+/* line 177, ../../../sass/modules/_main-container.scss */
+.main-container .directory ul li span.office {
+  text-transform: uppercase;
+}
+/* line 181, ../../../sass/modules/_main-container.scss */
+.main-container .directory ul li span.email {
+  padding-top: 8px;
+}
+/* line 192, ../../../sass/modules/_main-container.scss */
 .main-container .checkin {
   background-color: red;
   background-color: red;
 }
-/* line 187, ../../../sass/modules/_main-container.scss */
+/* line 196, ../../../sass/modules/_main-container.scss */
 .main-container .info {
   background-color: green;
   background-color: green;

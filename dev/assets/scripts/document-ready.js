@@ -57,6 +57,7 @@ var directory = (function () {
                   html += '          <div class="user-info user-details">';
                   html += '              <span class="email">'+email+'</span>';
                   html += '              <span class="phone">'+phone+'</span>';
+                  html += '              <span class="office">'+office+'</span>';
                   html += '              <span class="close"><i class="icon-close"></i></span>';
                   html += '          </div>';
                   html += '      </div>';
