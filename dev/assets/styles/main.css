@@ -2764,9 +2764,9 @@ body {
 /* line 62, ../../../sass/modules/_main-container.scss */
 .main-container .landing {
   width: 100%;
-  height: 67%;
+  height: 64%;
   position: absolute;
-  top: 119px;
+  top: 139px;
   left: 0;
   z-index: 99;
   background: #de2728 url(../../assets/images/sapient-logo.png) center 50% no-repeat;
