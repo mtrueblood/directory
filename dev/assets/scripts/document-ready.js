@@ -9,6 +9,7 @@ var directory = (function () {
         , winWidth = w.innerWidth || e.clientWidth || g.clientWidth
         , winHeight = w.innerHeight|| e.clientHeight|| g.clientHeight
         , landingContainer = '.landing'
+        , cur_location = 'detroit'
         ;
 
     return {
@@ -41,8 +42,12 @@ var directory = (function () {
                   var phone = object.get('phone');
                   var office = object.get('office');
                   var currentlyAt = object.get('currently');
+                  var homeOffice = '';
+                  if(cur_location != office){
+                    homeOffice = 'not-home';
+                  }
 
-                  html += '<li class="active">';
+                  html += '<li class="active '+homeOffice+'">';
 
                   html += '  <span class="user"><img src="http://placehold.it/77x77"></span>';
 

@@ -80,8 +80,9 @@
                     }
                 }
 
-                &.active-new {
+                &.not-home {
                     background-color: #eeeeee;
+                    color: #000;
                     .user {
                         border-right: 10px solid #34b934;
                     }
