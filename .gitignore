@@ -1,3 +1,6 @@
 *.DS_Store
-/sass-cache/*
+/.sass-cache/*
+/site/.sass-cache/*
+.sass-cache/*
+/dev/sass-cache/*
 /node_modules/*
