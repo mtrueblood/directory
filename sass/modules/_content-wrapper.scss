@@ -1,5 +1,14 @@
+@-webkit-keyframes slide {
+  from{
+      background-position: -2200px;
+  }
+  to{
+      background-position: 0px;
+  }
+}
+
 .content-wrapper {
-    background-image: url('../images/home-background.jpg');
+    background-image: url('../images/detroit.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -8,4 +17,7 @@
     right: 0;
     height: 100%;
     @include box-shadow(-2px, 0px, 1px 0px, rgba(0, 0, 0,.2));
+    -webkit-animation: slide 40s linear infinite;
 }
+
+

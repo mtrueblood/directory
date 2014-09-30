@@ -2623,9 +2623,21 @@ body {
   background-color: #bf2122;
 }
 
-/* line 1, ../../../sass/modules/_content-wrapper.scss */
+@-webkit-keyframes slide {
+  /* line 2, ../../../sass/modules/_content-wrapper.scss */
+  from {
+    background-position: -2200px;
+  }
+
+  /* line 5, ../../../sass/modules/_content-wrapper.scss */
+  to {
+    background-position: 0px;
+  }
+}
+
+/* line 10, ../../../sass/modules/_content-wrapper.scss */
 .content-wrapper {
-  background-image: url("../images/home-background.jpg");
+  background-image: url("../images/detroit.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -2636,6 +2648,7 @@ body {
   -webkit-box-shadow: -2px 0px 1px 0px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: -2px 0px 1px 0px rgba(0, 0, 0, 0.2);
   box-shadow: -2px 0px 1px 0px rgba(0, 0, 0, 0.2);
+  -webkit-animation: slide 40s linear infinite;
 }
 
 /* line 1, ../../../sass/modules/_wrapper.scss */
