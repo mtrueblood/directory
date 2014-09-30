@@ -18,7 +18,63 @@ var directory = (function () {
             setTimeout(function(){ $(landingContainer).fadeOut(200) }, 2000);
             // Initialize Parse Application
             Parse.initialize("uNtjzJdbGtEmC5n6ZoB3MkYbdlB23i5qeXejOT0O", "N1wO2Ceogq6ZPld1F6J6N4I6q6P4K8UXgWmI1yyu");
-            this.events();
+            this.queryData();
+        },
+
+        queryData: function(){
+            var UserData = Parse.Object.extend("directory");
+            var query = new Parse.Query(UserData);
+            var that = this;
+            query.find({
+              success: function(results) {
+                console.log("Successfully retrieved " + results.length + " users.");
+                // Do something with the returned Parse.Object values
+
+                var html = '';
+
+                for (var i = 0; i < results.length; i++) {
+                  var object = results[i];
+                  var fName = object.get('fName');
+                  var lName = object.get('lName');
+                  var title = object.get('title');
+                  var email = object.get('email');
+                  var phone = object.get('phone');
+                  var office = object.get('office');
+                  var currentlyAt = object.get('currently');
+
+                  html += '<li class="active">';
+
+                  html += '  <span class="user"><img src="http://placehold.it/77x77"></span>';
+
+                  html += '  <div class="user-container">';
+                  html += '      <div class="user-flex">';
+                  html += '          <div class="user-info user-default">';
+
+                  html += '              <span class="name">'+fName+' '+lName+'</span>';
+                  html += '              <span class="title">'+title+'</span>';
+                  html += '              <span class="bell"><i class="icon-bell"></i></span>';
+                  html += '          </div>';
+                  html += '          <div class="user-info user-details">';
+                  html += '              <span class="email">'+email+'</span>';
+                  html += '              <span class="phone">'+phone+'</span>';
+                  html += '              <span class="close"><i class="icon-close"></i></span>';
+                  html += '          </div>';
+                  html += '      </div>';
+                  html += '  </div>';
+                  html += '</li>';
+
+                  console.log(object.id + ' - ' + object.get('fName'));
+                }
+
+                $('.directory ul').append(html);
+
+              },
+              error: function(error) {
+                console.log("Error: " + error.code + " " + error.message);
+              }
+            }).then(function(){
+                that.events();
+            });
         },
 
         events: function(){

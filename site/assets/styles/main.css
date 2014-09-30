@@ -2842,6 +2842,7 @@ body {
   font-size: 0.7692rem;
   font-weight: 300;
   padding-left: 20px;
+  text-transform: capitalize;
 }
 /* line 144, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.name {
