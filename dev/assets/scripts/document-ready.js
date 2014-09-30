@@ -85,16 +85,29 @@ var directory = (function () {
 
         events: function(){
 
+            $(document).on('keyup', '.search input', function () {
+                var filter = $(this).val(); // get the value of the input, which we filter on
+                $('.directory li').find("span.name:not(:contains(" + filter + "))").closest('li').slideUp();
+                 $('.directory li').find("span.name:contains(" + filter + ")").closest('li').slideDown();
+              });
+
             // Nav Menu Event Handler
             [].forEach.call(document.querySelectorAll('nav a'), function(el) {
                 el.addEventListener('click', function(e) {
                     e.preventDefault();
                     var that = this;
-                    var section = '.' + that.getAttribute('data-section');
+                    var dataAtt = that.getAttribute('data-section');
+                    var section = '.' + dataAtt;
                     var allSections = '.section';
 
+                    $('.search').fadeOut(200);
                     $('.section').fadeOut(200).promise().done(function(){
                         $(section).fadeIn(200);
+                        if(dataAtt == 'directory'){
+                            $('.welcome').fadeOut(200).promise().done(function(){
+                                $('.search').fadeIn(200);
+                            })
+                        }
                     });
 
                 });

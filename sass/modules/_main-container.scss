@@ -4,7 +4,6 @@
 
     h1 {
         margin: 0;
-        padding: 10px 0;
         color: $dark-theme-primary-color;
         font-weight: 100;
         text-transform: uppercase;
@@ -13,8 +12,7 @@
         position: fixed;
         top: 0;
         width: 100%;
-        max-height: 119px;
-        min-height: 119px;
+        height: 139px;
         span {
             display: inline-block;
             font-size: $font10;
@@ -23,6 +21,15 @@
             font-weight: 500;
             clear: both;
             width: 100%;
+            &.search {
+                display: none;
+                input {
+                    width: 90%;
+                    position: relative;
+                    top: 14px;
+                    padding: 5px;
+                }
+            }
         }
     }
 
