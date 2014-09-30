@@ -101,8 +101,8 @@ var directory = (function () {
                     var allSections = '.section';
 
                     $('.search').fadeOut(200);
-                    $('.section').fadeOut(200).promise().done(function(){
-                        $(section).fadeIn(200);
+                    $('.section').animate({left: '-320px'}, 200).promise().done(function(){
+                        $(section).animate({left: '0px'}, 200);
                         if(dataAtt == 'directory'){
                             $('.welcome').fadeOut(200).promise().done(function(){
                                 $('.search').fadeIn(200);
