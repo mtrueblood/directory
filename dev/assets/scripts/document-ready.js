@@ -23,7 +23,7 @@ var directory = (function () {
         },
 
         queryData: function(){
-            var UserData = Parse.Object.extend("directory");
+            var UserData = Parse.Object.extend("directory_data");
             var query = new Parse.Query(UserData);
             var that = this;
             query.find({
