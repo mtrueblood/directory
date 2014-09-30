@@ -2889,8 +2889,16 @@ body {
   float: left;
   width: 77px;
   height: 77px;
+  overflow: hidden;
 }
-/* line 172, ../../../sass/modules/_main-container.scss */
+/* line 171, ../../../sass/modules/_main-container.scss */
+.main-container .directory ul li span.user img {
+  width: auto;
+  height: 100%;
+  position: relative;
+  left: -10px;
+}
+/* line 179, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.title {
   width: 66%;
   max-width: 158px;
@@ -2900,7 +2908,7 @@ body {
   padding-left: 20px;
   text-transform: capitalize;
 }
-/* line 181, ../../../sass/modules/_main-container.scss */
+/* line 188, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.name {
   width: 66%;
   max-width: 158px;
@@ -2914,7 +2922,7 @@ body {
   font-size: 1rem;
   text-transform: uppercase;
 }
-/* line 195, ../../../sass/modules/_main-container.scss */
+/* line 202, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.close, .main-container .directory ul li span.bell {
   font-size: 1.538rem;
   position: absolute;
@@ -2923,26 +2931,26 @@ body {
   display: inline-block;
   cursor: pointer;
 }
-/* line 206, ../../../sass/modules/_main-container.scss */
+/* line 213, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.office, .main-container .directory ul li span.phone, .main-container .directory ul li span.email {
   clear: both;
   width: 100%;
   padding: 0px 0 0 20px;
 }
-/* line 212, ../../../sass/modules/_main-container.scss */
+/* line 219, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.office {
   text-transform: uppercase;
 }
-/* line 216, ../../../sass/modules/_main-container.scss */
+/* line 223, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.email {
   padding-top: 8px;
 }
-/* line 227, ../../../sass/modules/_main-container.scss */
+/* line 234, ../../../sass/modules/_main-container.scss */
 .main-container .checkin {
   background-color: red;
   background-color: red;
 }
-/* line 231, ../../../sass/modules/_main-container.scss */
+/* line 238, ../../../sass/modules/_main-container.scss */
 .main-container .info {
   background-color: green;
   background-color: green;

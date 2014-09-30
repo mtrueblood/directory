@@ -50,7 +50,7 @@ var directory = (function () {
 
                   html += '<li class="active '+homeOffice+'">';
 
-                  html += '  <span class="user"><img src="http://placehold.it/77x77"></span>';
+                  html += '  <span class="user"><img src="assets/images/office/detroit/'+lName+'-'+fName+'.jpg"></span>';
 
                   html += '  <div class="user-container">';
                   html += '      <div class="user-flex">';

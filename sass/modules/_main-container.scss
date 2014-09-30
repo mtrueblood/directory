@@ -167,6 +167,13 @@
                         float: left;
                         width: 77px;
                         height: 77px;
+                        overflow: hidden;
+                        img {
+                            width: auto;
+                            height: 100%;
+                            position: relative;
+                            left: -10px;
+                        }
                     }
 
                     &.title {
