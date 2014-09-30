@@ -2713,7 +2713,7 @@ body {
 /* line 16, ../../../sass/modules/_main-container.scss */
 .main-container h1 span {
   display: inline-block;
-  font-size: 0.7692rem;
+  font-size: 2rem;
   position: relative;
   top: -65px;
   font-weight: 500;
@@ -2721,12 +2721,18 @@ body {
   width: 100%;
 }
 /* line 24, ../../../sass/modules/_main-container.scss */
+.main-container h1 span.welcome {
+  top: -47px;
+  font-weight: 300;
+}
+/* line 28, ../../../sass/modules/_main-container.scss */
 .main-container h1 span.search {
   display: none;
 }
-/* line 26, ../../../sass/modules/_main-container.scss */
+/* line 30, ../../../sass/modules/_main-container.scss */
 .main-container h1 span.search input {
   width: 90%;
+  font-size: 1rem;
   position: relative;
   top: 14px;
   padding: 5px;
@@ -2734,6 +2740,28 @@ body {
   text-transform: uppercase;
 }
 /* line 38, ../../../sass/modules/_main-container.scss */
+.main-container h1 span.search input::-webkit-input-placeholder {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+}
+/* line 43, ../../../sass/modules/_main-container.scss */
+.main-container h1 span.search input:-moz-placeholder {
+  /* Firefox 18- */
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+}
+/* line 48, ../../../sass/modules/_main-container.scss */
+.main-container h1 span.search input::-moz-placeholder {
+  /* Firefox 19+ */
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+}
+/* line 53, ../../../sass/modules/_main-container.scss */
+.main-container h1 span.search input:-ms-input-placeholder {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+}
+/* line 62, ../../../sass/modules/_main-container.scss */
 .main-container .landing {
   width: 100%;
   height: 67%;
@@ -2743,7 +2771,7 @@ body {
   z-index: 99;
   background: #de2728 url(../../assets/images/sapient-logo.png) center 50% no-repeat;
 }
-/* line 48, ../../../sass/modules/_main-container.scss */
+/* line 72, ../../../sass/modules/_main-container.scss */
 .main-container .section {
   width: 100%;
   height: 72.2%;
@@ -2753,19 +2781,19 @@ body {
   display: none;
   overflow-y: auto;
 }
-/* line 58, ../../../sass/modules/_main-container.scss */
+/* line 82, ../../../sass/modules/_main-container.scss */
 .main-container .directory {
   height: 56%;
   padding-bottom: 84px;
   background-color: white;
   background-color: white;
 }
-/* line 63, ../../../sass/modules/_main-container.scss */
+/* line 87, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul {
   margin: 0;
   padding: 0;
 }
-/* line 66, ../../../sass/modules/_main-container.scss */
+/* line 90, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li {
   list-style: none;
   display: block;
@@ -2776,79 +2804,79 @@ body {
   cursor: pointer;
   position: relative;
 }
-/* line 76, ../../../sass/modules/_main-container.scss */
+/* line 100, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li.active {
   background-color: #262626;
   color: #fff;
 }
-/* line 79, ../../../sass/modules/_main-container.scss */
+/* line 103, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li.active .user {
   border-right: 10px solid #34b934;
 }
-/* line 84, ../../../sass/modules/_main-container.scss */
+/* line 108, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li.inactive {
   background-color: #262626;
   color: #fff;
 }
-/* line 87, ../../../sass/modules/_main-container.scss */
+/* line 111, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li.inactive .user {
   border-right: 10px solid #ff0000;
 }
-/* line 92, ../../../sass/modules/_main-container.scss */
+/* line 116, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li.not-home {
   background-color: #eeeeee;
   color: #000;
 }
-/* line 95, ../../../sass/modules/_main-container.scss */
+/* line 119, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li.not-home .user {
   border-right: 10px solid #34b934;
 }
-/* line 99, ../../../sass/modules/_main-container.scss */
+/* line 123, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li.not-home:hover {
   background-color: #393939;
   color: #fff;
 }
-/* line 105, ../../../sass/modules/_main-container.scss */
+/* line 129, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li:hover {
   background-color: #393939;
   color: #fff;
 }
-/* line 110, ../../../sass/modules/_main-container.scss */
+/* line 134, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li .user-container {
   overflow: hidden;
   width: 66%;
   float: left;
 }
-/* line 115, ../../../sass/modules/_main-container.scss */
+/* line 139, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li .user-container .user-flex {
   width: 466px;
 }
-/* line 118, ../../../sass/modules/_main-container.scss */
+/* line 142, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li .user-container .user-flex .user-default {
   position: relative;
 }
-/* line 122, ../../../sass/modules/_main-container.scss */
+/* line 146, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li .user-container .user-flex .user-details {
   width: 233px;
   position: relative;
 }
-/* line 130, ../../../sass/modules/_main-container.scss */
+/* line 154, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li .user-info {
   float: left;
   width: 233px;
 }
-/* line 137, ../../../sass/modules/_main-container.scss */
+/* line 161, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span {
   display: inline-block;
   text-align: left;
 }
-/* line 141, ../../../sass/modules/_main-container.scss */
+/* line 165, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.user {
   float: left;
   width: 77px;
   height: 77px;
 }
-/* line 147, ../../../sass/modules/_main-container.scss */
+/* line 171, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.title {
   width: 66%;
   max-width: 158px;
@@ -2858,7 +2886,7 @@ body {
   padding-left: 20px;
   text-transform: capitalize;
 }
-/* line 156, ../../../sass/modules/_main-container.scss */
+/* line 180, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.name {
   width: 66%;
   max-width: 158px;
@@ -2872,7 +2900,7 @@ body {
   font-size: 1rem;
   text-transform: uppercase;
 }
-/* line 170, ../../../sass/modules/_main-container.scss */
+/* line 194, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.close, .main-container .directory ul li span.bell {
   font-size: 1.538rem;
   position: absolute;
@@ -2881,26 +2909,26 @@ body {
   display: inline-block;
   cursor: pointer;
 }
-/* line 181, ../../../sass/modules/_main-container.scss */
+/* line 205, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.office, .main-container .directory ul li span.phone, .main-container .directory ul li span.email {
   clear: both;
   width: 100%;
   padding: 0px 0 0 20px;
 }
-/* line 187, ../../../sass/modules/_main-container.scss */
+/* line 211, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.office {
   text-transform: uppercase;
 }
-/* line 191, ../../../sass/modules/_main-container.scss */
+/* line 215, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.email {
   padding-top: 8px;
 }
-/* line 202, ../../../sass/modules/_main-container.scss */
+/* line 226, ../../../sass/modules/_main-container.scss */
 .main-container .checkin {
   background-color: red;
   background-color: red;
 }
-/* line 206, ../../../sass/modules/_main-container.scss */
+/* line 230, ../../../sass/modules/_main-container.scss */
 .main-container .info {
   background-color: green;
   background-color: green;

@@ -15,21 +15,45 @@
         height: 139px;
         span {
             display: inline-block;
-            font-size: $font10;
+            font-size: $font26;
             position: relative;
             top: -65px;
             font-weight: 500;
             clear: both;
             width: 100%;
+            &.welcome {
+                top: -47px;
+                font-weight: 300;
+            }
             &.search {
                 display: none;
                 input {
                     width: 90%;
+                    font-size: $font13;
                     position: relative;
                     top: 14px;
                     padding: 5px;
                     text-align: center;
                     text-transform: uppercase;
+                    &::-webkit-input-placeholder {
+                       font-family: $fontDefault;
+                       font-weight: 300;
+                    }
+
+                    &:-moz-placeholder { /* Firefox 18- */
+                       font-family: $fontDefault;
+                       font-weight: 300;
+                    }
+
+                    &::-moz-placeholder {  /* Firefox 19+ */
+                       font-family: $fontDefault;
+                       font-weight: 300;
+                    }
+
+                    &:-ms-input-placeholder {
+                       font-family: $fontDefault;
+                       font-weight: 300;
+                    }
                 }
             }
         }
