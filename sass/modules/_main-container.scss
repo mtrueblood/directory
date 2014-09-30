@@ -60,6 +60,7 @@
                 float: left;
                 margin: 0 0 -3px 0;
                 cursor: pointer;
+                position: relative;
 
                 &.active {
                     background-color: #262626;
@@ -94,6 +95,31 @@
                     color: #fff;
                 }
 
+                .user-container {
+                    overflow: hidden;
+                    width: 66%;
+                    float: left;
+
+                    .user-flex {
+                        width: 466px;
+
+                        .user-default {
+                            position: relative;
+                        }
+
+                        .user-details {
+                            width: 233px;
+                            position: relative;
+                        }
+
+                    }
+                }
+
+                .user-info {
+                    float: left;
+                    width: 233px;
+                }
+
 
 
                 span {
@@ -103,27 +129,50 @@
                     &.user {
                         float: left;
                         width: 77px;
+                        height: 77px;
                     }
 
                     &.title {
                         width: 66%;
+                        max-width: 158px;
                         float: left;
-                        font-size: 0.7692rem;
+                        font-size: $font10;
+                        font-weight: 300;
                         padding-left: 20px;
-                        text-transform: uppercase;
+
                     }
                     &.name {
                         width: 66%;
+                        max-width: 158px;
                         overflow: hidden;
                         white-space: nowrap;
                         text-overflow: ellipsis;
-                        font-weight: 300;
+                        font-weight: 500;
                         float: left;
                         padding-left: 20px;
                         padding-top: 8px;
-                        font-size: $font18;
+                        font-size: $font13;
                         text-transform: uppercase;
                     }
+                    &.close,
+                    &.bell {
+                        font-size: $font20;
+                        position: absolute;
+                        right: 23px;
+                        top: 23px;
+                        display: inline-block;
+                        cursor: pointer;
+                    }
+
+                    &.phone,
+                    &.email {
+                        clear: both;
+                        width: 100%;
+                        padding: 8px 0 0 20px;
+                    }
+
+
+
                 }
             }
         }

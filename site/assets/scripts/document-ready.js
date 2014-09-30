@@ -33,7 +33,40 @@ var directory = (function () {
 
                     $('.section').fadeOut(200).promise().done(function(){
                         $(section).fadeIn(200);
-                    })
+                    });
+
+                });
+            });
+
+            // Bell Event Handler
+            [].forEach.call(document.querySelectorAll('.bell'), function(el) {
+                el.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    var that = this;
+
+                    $('.bell').parent().animate({
+                        marginLeft: '0px'
+                    }, 100).promise().done(function(){
+
+                        $(that).parent().animate({
+                            marginLeft: '-250px'
+                        }, 200);
+                    });
+
+                });
+            });
+
+            // Bell Event Handler
+            [].forEach.call(document.querySelectorAll('.close'), function(el) {
+                el.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    var that = this;
+
+                    $(that).parent().prev().animate({
+                        marginLeft: '0px'
+                    }, 200);
 
                 });
             });
