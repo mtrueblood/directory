@@ -106,21 +106,18 @@ var directory = (function () {
                     var allSections = '.section';
 
                     if(dataAtt == 'directory'){
-                            $('h1').css('height', '139px');
-                            $('.section').css('top', '139px');
-                            $('.search').show();
-                            $('.welcome').hide();
-                        } else {
-                           $('h1').css('height', '90px');
-                           $('.section').css('top', '90px');
-                        }
+                        $('h1').css('height', '139px');
+                        $('.section').css('top', '139px');
+                        $('.search').show();
+                        $('.welcome').hide();
+                    } else {
+                       $('h1').css('height', '90px');
+                       $('.section').css({'top' : '90px', 'height' : '66%'});
+                    }
 
                     $('.section').animate({left: '-'+winWidth+'px'}, 200).promise().done(function(){
                         $(section).animate({left: '0px'}, 200);
                     });
-
-
-
 
                 });
             });
