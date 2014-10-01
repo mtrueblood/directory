@@ -190,7 +190,7 @@
 
                             .title {
                                 position: fixed;
-                                bottom: 72px;
+                                bottom: 59px;
                                 left: -7px;
                                 z-index: 9999;
                                 font-size: $font11;
@@ -256,6 +256,7 @@
                         font-weight: 300;
                         padding-left: 20px;
                         text-transform: capitalize;
+                        height: 31px;
                     }
                     &.name {
                         width: 66%;

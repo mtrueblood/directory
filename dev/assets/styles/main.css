@@ -2918,7 +2918,7 @@ body {
 /* line 191, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li .user-container .user-flex .user-details .title {
   position: fixed;
-  bottom: 72px;
+  bottom: 59px;
   left: -7px;
   z-index: 9999;
   font-size: 0.8462rem;
@@ -2979,8 +2979,9 @@ body {
   font-weight: 300;
   padding-left: 20px;
   text-transform: capitalize;
+  height: 31px;
 }
-/* line 260, ../../../sass/modules/_main-container.scss */
+/* line 261, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.name {
   width: 66%;
   max-width: 158px;
@@ -2994,7 +2995,7 @@ body {
   font-size: 1rem;
   text-transform: uppercase;
 }
-/* line 274, ../../../sass/modules/_main-container.scss */
+/* line 275, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.close, .main-container .directory ul li span.bell {
   font-size: 1.538rem;
   position: absolute;
@@ -3003,26 +3004,26 @@ body {
   display: inline-block;
   cursor: pointer;
 }
-/* line 285, ../../../sass/modules/_main-container.scss */
+/* line 286, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.office, .main-container .directory ul li span.phone, .main-container .directory ul li span.email {
   clear: both;
   width: 100%;
   padding: 0px 0 0 20px;
 }
-/* line 291, ../../../sass/modules/_main-container.scss */
+/* line 292, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.office {
   text-transform: uppercase;
 }
-/* line 295, ../../../sass/modules/_main-container.scss */
+/* line 296, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.email {
   padding-top: 8px;
 }
-/* line 306, ../../../sass/modules/_main-container.scss */
+/* line 307, ../../../sass/modules/_main-container.scss */
 .main-container .checkin {
   background-color: red;
   background-color: red;
 }
-/* line 310, ../../../sass/modules/_main-container.scss */
+/* line 311, ../../../sass/modules/_main-container.scss */
 .main-container .info {
   background-color: green;
   background-color: green;
