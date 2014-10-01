@@ -2809,7 +2809,7 @@ body {
 /* line 92, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul {
   margin: 0;
-  padding: 0;
+  padding: 0 0 85px 0;
 }
 /* line 95, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li {
