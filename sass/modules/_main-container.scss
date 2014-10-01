@@ -79,9 +79,8 @@
         left: -100%;
         z-index: 101;
         display: block;
-
         overflow-y: scroll; /* has to be scroll, not auto */
-  -webkit-overflow-scrolling: touch;
+        -webkit-overflow-scrolling: touch;
     }
 
     .directory {

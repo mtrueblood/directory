@@ -2626,7 +2626,7 @@ body {
 @-webkit-keyframes slide {
   /* line 2, ../../../sass/modules/_content-wrapper.scss */
   from {
-    background-position: -2200px;
+    background-position: -1750px;
   }
 
   /* line 5, ../../../sass/modules/_content-wrapper.scss */
@@ -2800,19 +2800,19 @@ body {
   /* has to be scroll, not auto */
   -webkit-overflow-scrolling: touch;
 }
-/* line 87, ../../../sass/modules/_main-container.scss */
+/* line 86, ../../../sass/modules/_main-container.scss */
 .main-container .directory {
   height: 56%;
   padding-bottom: 35px;
   background-color: white;
   background-color: white;
 }
-/* line 92, ../../../sass/modules/_main-container.scss */
+/* line 91, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul {
   margin: 0;
   padding: 0 0 0px 0;
 }
-/* line 95, ../../../sass/modules/_main-container.scss */
+/* line 94, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li {
   list-style: none;
   display: block;
@@ -2823,58 +2823,58 @@ body {
   cursor: pointer;
   position: relative;
 }
-/* line 105, ../../../sass/modules/_main-container.scss */
+/* line 104, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li.active {
   background-color: #262626;
   color: #fff;
 }
-/* line 108, ../../../sass/modules/_main-container.scss */
+/* line 107, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li.active .user {
   border-right: 10px solid #34b934;
 }
-/* line 113, ../../../sass/modules/_main-container.scss */
+/* line 112, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li.inactive {
   background-color: #262626;
   color: #fff;
 }
-/* line 116, ../../../sass/modules/_main-container.scss */
+/* line 115, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li.inactive .user {
   border-right: 10px solid #ff0000;
 }
-/* line 121, ../../../sass/modules/_main-container.scss */
+/* line 120, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li.not-home {
   background-color: #eeeeee;
   color: #000;
 }
-/* line 124, ../../../sass/modules/_main-container.scss */
+/* line 123, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li.not-home .user {
   border-right: 10px solid #34b934;
 }
-/* line 128, ../../../sass/modules/_main-container.scss */
+/* line 127, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li.not-home:hover {
   background-color: #393939;
   color: #fff;
 }
-/* line 134, ../../../sass/modules/_main-container.scss */
+/* line 133, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li:hover {
   background-color: #393939;
   color: #fff;
 }
-/* line 139, ../../../sass/modules/_main-container.scss */
+/* line 138, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li .user-container {
   overflow: hidden;
   width: 66%;
   float: left;
 }
-/* line 144, ../../../sass/modules/_main-container.scss */
+/* line 143, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li .user-container .user-flex {
   width: 466px;
 }
-/* line 147, ../../../sass/modules/_main-container.scss */
+/* line 146, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li .user-container .user-flex .user-default {
   position: relative;
 }
-/* line 151, ../../../sass/modules/_main-container.scss */
+/* line 150, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li .user-container .user-flex .user-details {
   height: 600px;
   position: fixed;
@@ -2885,26 +2885,26 @@ body {
   display: none;
   z-index: 99999;
 }
-/* line 162, ../../../sass/modules/_main-container.scss */
+/* line 161, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li .user-container .user-flex .user-details a {
   color: #fff;
   text-decoration: none;
 }
-/* line 167, ../../../sass/modules/_main-container.scss */
+/* line 166, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li .user-container .user-flex .user-details i {
   margin-right: 10px;
   position: relative;
   top: 2px;
 }
-/* line 173, ../../../sass/modules/_main-container.scss */
+/* line 172, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li .user-container .user-flex .user-details i.icon-close {
   top: -10px;
 }
-/* line 177, ../../../sass/modules/_main-container.scss */
+/* line 176, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li .user-container .user-flex .user-details span {
   text-shadow: 0px 0px 8px #969696;
 }
-/* line 181, ../../../sass/modules/_main-container.scss */
+/* line 180, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li .user-container .user-flex .user-details .name {
   position: fixed;
   bottom: 86px;
@@ -2915,7 +2915,7 @@ body {
   min-width: 300px;
   width: 300px;
 }
-/* line 192, ../../../sass/modules/_main-container.scss */
+/* line 191, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li .user-container .user-flex .user-details .title {
   position: fixed;
   bottom: 72px;
@@ -2927,7 +2927,7 @@ body {
   text-transform: uppercase;
   font-weight: 500;
 }
-/* line 204, ../../../sass/modules/_main-container.scss */
+/* line 203, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li .user-container .user-flex .user-details .phone {
   position: fixed;
   bottom: 13px;
@@ -2936,7 +2936,7 @@ body {
   font-size: 1rem;
   max-width: 300px;
 }
-/* line 213, ../../../sass/modules/_main-container.scss */
+/* line 212, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li .user-container .user-flex .user-details .email {
   position: fixed;
   bottom: 39px;
@@ -2945,32 +2945,32 @@ body {
   font-size: 1rem;
   max-width: 300px;
 }
-/* line 227, ../../../sass/modules/_main-container.scss */
+/* line 226, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li .user-info {
   float: left;
   width: 233px;
   height: 77px;
 }
-/* line 235, ../../../sass/modules/_main-container.scss */
+/* line 234, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span {
   display: inline-block;
   text-align: left;
 }
-/* line 239, ../../../sass/modules/_main-container.scss */
+/* line 238, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.user {
   float: left;
   width: 77px;
   height: 77px;
   overflow: hidden;
 }
-/* line 244, ../../../sass/modules/_main-container.scss */
+/* line 243, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.user img {
   width: auto;
   height: 100%;
   position: relative;
   left: -10px;
 }
-/* line 252, ../../../sass/modules/_main-container.scss */
+/* line 251, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.title {
   width: 66%;
   max-width: 158px;
@@ -2980,7 +2980,7 @@ body {
   padding-left: 20px;
   text-transform: capitalize;
 }
-/* line 261, ../../../sass/modules/_main-container.scss */
+/* line 260, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.name {
   width: 66%;
   max-width: 158px;
@@ -2994,7 +2994,7 @@ body {
   font-size: 1rem;
   text-transform: uppercase;
 }
-/* line 275, ../../../sass/modules/_main-container.scss */
+/* line 274, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.close, .main-container .directory ul li span.bell {
   font-size: 1.538rem;
   position: absolute;
@@ -3003,26 +3003,26 @@ body {
   display: inline-block;
   cursor: pointer;
 }
-/* line 286, ../../../sass/modules/_main-container.scss */
+/* line 285, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.office, .main-container .directory ul li span.phone, .main-container .directory ul li span.email {
   clear: both;
   width: 100%;
   padding: 0px 0 0 20px;
 }
-/* line 292, ../../../sass/modules/_main-container.scss */
+/* line 291, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.office {
   text-transform: uppercase;
 }
-/* line 296, ../../../sass/modules/_main-container.scss */
+/* line 295, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.email {
   padding-top: 8px;
 }
-/* line 307, ../../../sass/modules/_main-container.scss */
+/* line 306, ../../../sass/modules/_main-container.scss */
 .main-container .checkin {
   background-color: red;
   background-color: red;
 }
-/* line 311, ../../../sass/modules/_main-container.scss */
+/* line 310, ../../../sass/modules/_main-container.scss */
 .main-container .info {
   background-color: green;
   background-color: green;
