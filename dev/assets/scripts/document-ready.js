@@ -28,54 +28,56 @@ var directory = (function () {
             var that = this;
             query.ascending("lName");
             query.find({
-              success: function(results) {
-                console.log("Successfully retrieved " + results.length + " users.");
-                // Do something with the returned Parse.Object values
+                success: function(results) {
 
-                var html = '';
+                    var html = '';
 
-                for (var i = 0; i < results.length; i++) {
-                  var object = results[i];
-                  var fName = object.get('fName');
-                  var lName = object.get('lName');
-                  var title = object.get('title');
-                  var email = object.get('email');
-                  var phone = object.get('phone');
-                  var office = object.get('office');
-                  var currentlyAt = object.get('currently');
-                  var homeOffice = '';
-                  if(cur_location != office){
-                    homeOffice = 'not-home';
-                  }
+                    for (var i = 0; i < results.length; i++) {
+                        var object = results[i];
+                        var fName = object.get('fName');
+                        var lName = object.get('lName');
+                        var title = object.get('title');
+                        var email = object.get('email');
+                        var phone = object.get('phone');
+                        var office = object.get('office');
+                        var currentlyAt = object.get('currently');
+                        var homeOffice = '';
 
-                  html += '<li class="active '+homeOffice+'">';
+                        if(phone != 'n/a'){
+                            phone = phone.substr(0, 3) + '-' + phone.substr(3, 3) + '-' + phone.substr(6,4);
+                        }
 
-                  html += '  <span class="user"><img src="assets/images/office/detroit/'+lName+'-'+fName+'.jpg"></span>';
+                        if(cur_location != office){
+                            homeOffice = 'not-home';
+                        }
 
-                  html += '  <div class="user-container">';
-                  html += '      <div class="user-flex">';
-                  html += '          <div class="user-info user-default">';
+                        html += '<li class="active '+homeOffice+'">';
 
-                  html += '              <span class="name">'+fName+' '+lName+'</span>';
-                  html += '              <span class="title">'+title+'</span>';
-                  html += '              <span class="bell"><i class="icon-bell"></i></span>';
-                  html += '          </div>';
-                  html += '          <div class="user-info user-details" style="background: url(assets/images/office/detroit/'+lName+'-'+fName+'.jpg) 0 0 no-repeat;">';
-                  html += '              <span class="name">'+fName+' '+lName+'</span>';
-                  html += '              <span class="title">'+title+'</span>';
-                  html += '              <span class="email"><i class="icon-mail4"></i><a href="mailto:'+email+'" target="_blank">'+email+'</a></span>';
-                  html += '              <span class="phone"><i class="icon-phone"></i><a href="tel:'+phone+'"  target="_blank">'+phone+'</a></span>';
-                  html += '              <span class="office">'+office+'</span>';
-                  html += '              <span class="close"><i class="icon-close"></i></span>';
-                  html += '          </div>';
-                  html += '      </div>';
-                  html += '  </div>';
-                  html += '</li>';
+                        html += '  <span class="user"><img src="assets/images/office/detroit/'+lName+'-'+fName+'.jpg"></span>';
 
-                  console.log(object.id + ' - ' + object.get('fName'));
-                }
+                        html += '  <div class="user-container">';
+                        html += '      <div class="user-flex">';
+                        html += '          <div class="user-info user-default">';
 
-                $('.directory ul').append(html);
+                        html += '              <span class="name">'+fName+' '+lName+'</span>';
+                        html += '              <span class="title">'+title+'</span>';
+                        html += '              <span class="bell"><i class="icon-bell"></i></span>';
+                        html += '          </div>';
+                        html += '          <div class="user-info user-details" style="background: url(assets/images/office/detroit/'+lName+'-'+fName+'.jpg) 0 0 no-repeat;">';
+                        html += '              <span class="name">'+fName+' '+lName+'</span>';
+                        html += '              <span class="title">'+title+'</span>';
+                        html += '              <span class="email"><i class="icon-mail4"></i><a href="mailto:'+email+'" target="_blank">'+email+'</a></span>';
+                        html += '              <span class="phone"><i class="icon-phone"></i><a href="tel:'+phone+'"  target="_blank">'+phone+'</a></span>';
+                        html += '              <span class="office">'+office+'</span>';
+                        html += '              <span class="close"><i class="icon-close"></i></span>';
+                        html += '          </div>';
+                        html += '      </div>';
+                        html += '  </div>';
+                        html += '</li>';
+
+                    }
+
+                    $('.directory ul').append(html);
 
               },
               error: function(error) {
