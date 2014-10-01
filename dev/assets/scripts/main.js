@@ -63,7 +63,7 @@ var directory = (function () {
                   html += '          <div class="user-info user-details" style="background: url(assets/images/office/detroit/'+lName+'-'+fName+'.jpg) 0 0 no-repeat;">';
                   html += '              <span class="name">'+fName+' '+lName+'</span>';
                   html += '              <span class="title">'+title+'</span>';
-                  html += '              <span class="email"><i class="icon-mail"></i><a href="mailto:'+email+'" target="_blank">'+email+'</a></span>';
+                  html += '              <span class="email"><i class="icon-mail4"></i><a href="mailto:'+email+'" target="_blank">'+email+'</a></span>';
                   html += '              <span class="phone"><i class="icon-phone"></i><a href="tel:'+phone+'"  target="_blank">'+phone+'</a></span>';
                   html += '              <span class="office">'+office+'</span>';
                   html += '              <span class="close"><i class="icon-close"></i></span>';
@@ -145,7 +145,7 @@ var directory = (function () {
                     var that = this;
 
                     $(that).parent().fadeOut(200);
-                    $('.section').css({'zIndex' : '101', 'position' : 'absolute', 'top' : '139px', 'height': '72.2%'});
+                    $('.section').css({'zIndex' : '101', 'position' : 'absolute', 'top' : '139px', 'height': '56%'});
                     $('.search, h1, nav').show();
                 });
             });
