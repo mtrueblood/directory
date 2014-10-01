@@ -74,10 +74,12 @@
         height: 72.2%;
         position: absolute;
         top: 139px;
-        left: -320px;
+        left: -100%;
         z-index: 99;
         display: block;
-        overflow-y: auto;
+
+        overflow-y: scroll; /* has to be scroll, not auto */
+  -webkit-overflow-scrolling: touch;
     }
 
     .directory {
@@ -145,8 +147,75 @@
                         }
 
                         .user-details {
-                            width: 233px;
-                            position: relative;
+                            height: 437px;
+                            position: fixed;
+                            float: none;
+                            top: 89px;
+                            left: -162px;
+                            width: 500px;
+                            display: none;
+                            z-index: 999;
+
+                            a {
+                                color: #fff;
+                                text-decoration: none;
+                            }
+
+                            i {
+                                margin-right: 10px;
+                                position: relative;
+                                top: 2px;
+                            }
+
+                            i.icon-close {
+                                top: -10px;
+                            }
+
+                            span {
+                                text-shadow: 0px 0px 8px rgba(150, 150, 150, 1);
+                            }
+
+                            .name {
+                                position: fixed;
+                                bottom: 134px;
+                                left: -9px;
+                                z-index: 9999;
+                                font-size: 2rem;
+                                max-width: 300px;
+                                min-width: 300px;
+                                width: 300px;
+
+                            }
+
+                            .title {
+                                position: fixed;
+                                bottom: 121px;
+                                left: -7px;
+                                z-index: 9999;
+                                font-size: $font11;
+                                max-width: 320px;
+                                min-width: 320px;
+                                text-transform: uppercase;
+                            }
+
+                            .phone {
+                                position: fixed;
+                                bottom: 75px;
+                                left: -7px;
+                                z-index: 9999;
+                                font-size: 1rem;
+                                max-width: 300px;
+                            }
+
+                            .email {
+                                position: fixed;
+                                bottom: 99px;
+                                left: -7px;
+                                z-index: 9999;
+                                font-size: 1rem;
+                                max-width: 300px;
+                            }
+
                         }
 
                     }
@@ -155,6 +224,7 @@
                 .user-info {
                     float: left;
                     width: 233px;
+                    height: 77px;
                 }
 
 

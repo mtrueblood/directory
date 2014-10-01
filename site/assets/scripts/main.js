@@ -60,9 +60,11 @@ var directory = (function () {
                   html += '              <span class="title">'+title+'</span>';
                   html += '              <span class="bell"><i class="icon-bell"></i></span>';
                   html += '          </div>';
-                  html += '          <div class="user-info user-details">';
-                  html += '              <span class="email">'+email+'</span>';
-                  html += '              <span class="phone">'+phone+'</span>';
+                  html += '          <div class="user-info user-details" style="background: url(assets/images/office/detroit/'+lName+'-'+fName+'.jpg);">';
+                  html += '              <span class="name">'+fName+' '+lName+'</span>';
+                  html += '              <span class="title">'+title+'</span>';
+                  html += '              <span class="email"><i class="icon-mail"></i><a href="mailto:'+email+'" target="_blank">'+email+'</a></span>';
+                  html += '              <span class="phone"><i class="icon-phone"></i><a href="tel:'+phone+'"  target="_blank">'+phone+'</a></span>';
                   html += '              <span class="office">'+office+'</span>';
                   html += '              <span class="close"><i class="icon-close"></i></span>';
                   html += '          </div>';
@@ -87,7 +89,7 @@ var directory = (function () {
         events: function(){
 
             $(document).on('keyup keypress focus focusin focusout', '.search input', function () {
-                var filter = $(this).val(); // get the value of the input, which we filter on
+                var filter = $(this).val().toLowerCase(); // get the value of the input, which we filter on
                 $('.directory li').find("span.name:not(:contains(" + filter + "))").closest('li').slideUp();
                 $('.directory li').find("span.name:contains(" + filter + ")").closest('li').slideDown();
             });
@@ -121,14 +123,7 @@ var directory = (function () {
 
                     var that = this;
 
-                    $('.bell').parent().animate({
-                        marginLeft: '0px'
-                    }, 100).promise().done(function(){
-
-                        $(that).parent().animate({
-                            marginLeft: '-250px'
-                        }, 200);
-                    });
+                    $(this, '.bell').parent().next().fadeIn(200);
 
                 });
             });
@@ -140,9 +135,7 @@ var directory = (function () {
 
                     var that = this;
 
-                    $(that).parent().prev().animate({
-                        marginLeft: '0px'
-                    }, 200);
+                    $(that).parent().fadeOut(200);
 
                 });
             });
