@@ -124,7 +124,7 @@ var directory = (function () {
                     var that = this;
 
                     $(this, '.bell').parent().next().fadeIn(200);
-                    $('.section').css({'zIndex' : '104', 'position' : 'fixed', 'top' : '0', 'height', '422px'});
+                    $('.section').css({'zIndex' : '104', 'position' : 'fixed', 'top' : '0', 'height': '422px'});
                     $('.search, h1, nav').hide();
 
                 });
