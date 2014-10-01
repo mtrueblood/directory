@@ -124,7 +124,7 @@ var directory = (function () {
                     var that = this;
 
                     $(this, '.bell').parent().next().fadeIn(200);
-                    $('.section').css({'zIndex' : '104', 'position' : 'fixed'});
+                    $('.section').css({'zIndex' : '104', 'position' : 'fixed', 'top' : '0'});
                     $('.search, h1, nav').hide();
 
                 });
@@ -138,7 +138,7 @@ var directory = (function () {
                     var that = this;
 
                     $(that).parent().fadeOut(200);
-                    $('.section').css({'zIndex' : '101', 'position' : 'absolute'});
+                    $('.section').css({'zIndex' : '101', 'position' : 'absolute', 'top' : '139px'});
                     $('.search, h1, nav').show();
                 });
             });
