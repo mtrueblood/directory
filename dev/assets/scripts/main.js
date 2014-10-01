@@ -61,7 +61,7 @@ var directory = (function () {
 
                         html += '              <span class="name">'+fName+' '+lName+'</span>';
                         html += '              <span class="title">'+title+'</span>';
-                        html += '              <span class="bell"><i class="icon-bell"></i></span>';
+                        html += '              <span class="bell"><i class="icon-address-book"></i></span>';
                         html += '          </div>';
                         html += '          <div class="user-info user-details" style="background: url(assets/images/office/detroit/'+lName+'-'+fName+'.jpg) 0 0 no-repeat;">';
                         html += '              <span class="name">'+fName+' '+lName+'</span>';
