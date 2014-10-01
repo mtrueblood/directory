@@ -107,7 +107,7 @@ var directory = (function () {
 
                     if(dataAtt == 'directory'){
                         $('h1').css('height', '139px');
-                        $('.section').css('top', '139px');
+                        $('.section').css({'top' : '139px', 'height' : '56%'});
                         $('.search').show();
                         $('.welcome').hide();
                     } else {
