@@ -124,9 +124,9 @@ var directory = (function () {
                     var that = this;
 
                     $(this, '.bell').parent().next().fadeIn(200);
-                    $('.section').css('zIndex', '104');
-                    $('.search').hide();
-                    $('h1').css('height', '89px');
+                    $('.section').css({'zIndex' : '104', 'position' : 'fixed'});
+                    $('.search, h1, nav').hide();
+
                 });
             });
 
@@ -138,9 +138,8 @@ var directory = (function () {
                     var that = this;
 
                     $(that).parent().fadeOut(200);
-                    $('.section').css('zIndex', '101');
-                    $('.search').show();
-                    $('h1').css('height', '139px');
+                    $('.section').css({'zIndex' : '101', 'position' : 'absolute'});
+                    $('.search, h1, nav').show();
                 });
             });
 
