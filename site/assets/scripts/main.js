@@ -103,15 +103,22 @@ var directory = (function () {
                     var section = '.' + dataAtt;
                     var allSections = '.section';
 
-                    $('.search').fadeOut(200);
+                    if(dataAtt == 'directory'){
+                            $('h1').css('height', '139px');
+                            $('.section').css('top', '139px');
+                            $('.search').show();
+                            $('.welcome').hide();
+                        } else {
+                           $('h1').css('height', '90px');
+                           $('.section').css('top', '90px');
+                        }
+
                     $('.section').animate({left: '-320px'}, 200).promise().done(function(){
                         $(section).animate({left: '0px'}, 200);
-                        if(dataAtt == 'directory'){
-                            $('.welcome').fadeOut(200).promise().done(function(){
-                                $('.search').fadeIn(200);
-                            })
-                        }
                     });
+
+
+
 
                 });
             });

@@ -12,7 +12,7 @@
         position: fixed;
         top: 0;
         width: 100%;
-        height: 139px;
+        height: 90px;
         z-index: 0;
         overflow: hidden;
         span {
@@ -63,11 +63,11 @@
 
     .landing {
         width: 100%;
-        height: 64%;
+        height: 65%;
         position: absolute;
-        top: 139px;
+        top: 90px;
         left: 0;
-        z-index: 101;
+        z-index: 0;
         background: $sapient-primary-red url(../../assets/images/sapient-logo.png) center 50% no-repeat;
     }
 
