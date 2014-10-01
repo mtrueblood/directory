@@ -2875,7 +2875,7 @@ body {
 }
 /* line 151, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li .user-container .user-flex .user-details {
-  height: 437px;
+  height: 600px;
   position: fixed;
   float: none;
   top: 90px;
