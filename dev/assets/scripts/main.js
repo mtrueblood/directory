@@ -113,7 +113,7 @@ var directory = (function () {
                            $('.section').css('top', '90px');
                         }
 
-                    $('.section').animate({left: '-320px'}, 200).promise().done(function(){
+                    $('.section').animate({left: '-'+winWidth+'px'}, 200).promise().done(function(){
                         $(section).animate({left: '0px'}, 200);
                     });
 
