@@ -125,6 +125,7 @@ var directory = (function () {
 
                     $(this, '.bell').parent().next().fadeIn(200);
                     $('.section').css('zIndex', '102');
+                    $('.search').hide();
                 });
             });
 
@@ -137,6 +138,7 @@ var directory = (function () {
 
                     $(that).parent().fadeOut(200);
                     $('.section').css('zIndex', '101');
+                    $('.search').show();
                 });
             });
 
