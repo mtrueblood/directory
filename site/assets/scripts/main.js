@@ -10,7 +10,6 @@
         //, winHeight = w.innerHeight|| e.clientHeight|| g.clientHeight
         , landingContainer = '.landing'
         , cur_location = 'detroit'
-        , Parse
         ;
 
     var directory = {

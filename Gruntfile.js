@@ -55,9 +55,6 @@ module.exports = function(grunt) {
             }
         },
 
-
-
-
         clean: {
             dev: [
                 '<%= working_base_folder %>/assets/scripts/global.js',
