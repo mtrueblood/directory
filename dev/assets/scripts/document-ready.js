@@ -17,9 +17,11 @@
         appInit: function(){
 
             // Fade-Out Sapient Landing
+            /*
             setTimeout(function(){
                 $(landingContainer).fadeOut(200);
             }, 2000);
+            */
             // Initialize Parse Application
             Parse.initialize('uNtjzJdbGtEmC5n6ZoB3MkYbdlB23i5qeXejOT0O', 'N1wO2Ceogq6ZPld1F6J6N4I6q6P4K8UXgWmI1yyu');
             this.queryData();
@@ -118,6 +120,7 @@
 
                     if(dataAtt === 'directory'){
 
+                        document.querySelector(landingContainer).style.display = 'none';
                         document.querySelector('h1').style.height = '139px';
                         document.querySelector(allSections).style.top = '139px';
                         document.querySelector(allSections).style.height = '56%';
