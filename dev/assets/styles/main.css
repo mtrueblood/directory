@@ -2883,26 +2883,39 @@ body {
   display: none;
   z-index: 99999;
 }
-/* line 160, ../../../sass/modules/_main-container.scss */
+@media (min-width: 360px) {
+  /* line 150, ../../../sass/modules/_main-container.scss */
+  .main-container .directory ul li .user-container .user-flex .user-details {
+    height: 480px;
+    position: fixed;
+    float: none;
+    top: 108px;
+    left: -164px;
+    width: 600px;
+    display: none;
+    z-index: 99999;
+  }
+}
+/* line 171, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li .user-container .user-flex .user-details a {
   color: #fff;
   text-decoration: none;
 }
-/* line 165, ../../../sass/modules/_main-container.scss */
+/* line 176, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li .user-container .user-flex .user-details i {
   margin-right: 10px;
   position: relative;
   top: 2px;
 }
-/* line 171, ../../../sass/modules/_main-container.scss */
+/* line 182, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li .user-container .user-flex .user-details i.icon-close {
   top: -10px;
 }
-/* line 175, ../../../sass/modules/_main-container.scss */
+/* line 186, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li .user-container .user-flex .user-details span {
   text-shadow: 0px 0px 8px #969696;
 }
-/* line 179, ../../../sass/modules/_main-container.scss */
+/* line 190, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li .user-container .user-flex .user-details .name {
   position: fixed;
   top: 290px;
@@ -2913,7 +2926,13 @@ body {
   min-width: 300px;
   width: 300px;
 }
-/* line 190, ../../../sass/modules/_main-container.scss */
+@media (min-width: 360px) {
+  /* line 190, ../../../sass/modules/_main-container.scss */
+  .main-container .directory ul li .user-container .user-flex .user-details .name {
+    top: 436px;
+  }
+}
+/* line 204, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li .user-container .user-flex .user-details .title {
   position: fixed;
   top: 331px;
@@ -2925,7 +2944,13 @@ body {
   text-transform: uppercase;
   font-weight: 500;
 }
-/* line 202, ../../../sass/modules/_main-container.scss */
+@media (min-width: 360px) {
+  /* line 204, ../../../sass/modules/_main-container.scss */
+  .main-container .directory ul li .user-container .user-flex .user-details .title {
+    top: 478px;
+  }
+}
+/* line 219, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li .user-container .user-flex .user-details .phone {
   position: fixed;
   top: 393px;
@@ -2934,7 +2959,13 @@ body {
   font-size: 1rem;
   max-width: 300px;
 }
-/* line 211, ../../../sass/modules/_main-container.scss */
+@media (min-width: 360px) {
+  /* line 219, ../../../sass/modules/_main-container.scss */
+  .main-container .directory ul li .user-container .user-flex .user-details .phone {
+    top: 553px;
+  }
+}
+/* line 231, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li .user-container .user-flex .user-details .email {
   position: fixed;
   top: 361px;
@@ -2943,32 +2974,38 @@ body {
   font-size: 1rem;
   max-width: 300px;
 }
-/* line 225, ../../../sass/modules/_main-container.scss */
+@media (min-width: 360px) {
+  /* line 231, ../../../sass/modules/_main-container.scss */
+  .main-container .directory ul li .user-container .user-flex .user-details .email {
+    top: 514px;
+  }
+}
+/* line 248, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li .user-info {
   float: left;
   width: 233px;
   height: 77px;
 }
-/* line 231, ../../../sass/modules/_main-container.scss */
+/* line 254, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span {
   display: inline-block;
   text-align: left;
 }
-/* line 235, ../../../sass/modules/_main-container.scss */
+/* line 258, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.user {
   float: left;
   width: 77px;
   height: 77px;
   overflow: hidden;
 }
-/* line 241, ../../../sass/modules/_main-container.scss */
+/* line 264, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.user img {
   width: auto;
   height: 100%;
   position: relative;
   left: -10px;
 }
-/* line 249, ../../../sass/modules/_main-container.scss */
+/* line 272, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.title {
   width: 66%;
   max-width: 158px;
@@ -2979,7 +3016,7 @@ body {
   text-transform: capitalize;
   height: 31px;
 }
-/* line 259, ../../../sass/modules/_main-container.scss */
+/* line 282, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.name {
   width: 66%;
   max-width: 158px;
@@ -2993,7 +3030,7 @@ body {
   font-size: 1rem;
   text-transform: uppercase;
 }
-/* line 272, ../../../sass/modules/_main-container.scss */
+/* line 295, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.close {
   font-size: 1.538rem;
   position: absolute;
@@ -3002,35 +3039,48 @@ body {
   display: inline-block;
   cursor: pointer;
 }
-/* line 280, ../../../sass/modules/_main-container.scss */
+@media (min-width: 360px) {
+  /* line 295, ../../../sass/modules/_main-container.scss */
+  .main-container .directory ul li span.close {
+    left: 485px;
+  }
+}
+/* line 306, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.bell {
   font-size: 1.538rem;
   position: absolute;
-  right: 23px;
+  left: 23px;
+  left: calc(100% - 52px);
   top: 23px;
   display: inline-block;
   cursor: pointer;
 }
-/* line 291, ../../../sass/modules/_main-container.scss */
+@media (min-width: 360px) {
+  /* line 306, ../../../sass/modules/_main-container.scss */
+  .main-container .directory ul li span.bell {
+    left: calc(100% - 30px);
+  }
+}
+/* line 323, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.office, .main-container .directory ul li span.phone, .main-container .directory ul li span.email {
   clear: both;
   width: 100%;
   padding: 0px 0 0 20px;
 }
-/* line 297, ../../../sass/modules/_main-container.scss */
+/* line 329, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.office {
   text-transform: uppercase;
 }
-/* line 301, ../../../sass/modules/_main-container.scss */
+/* line 333, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.email {
   padding-top: 8px;
 }
-/* line 312, ../../../sass/modules/_main-container.scss */
+/* line 344, ../../../sass/modules/_main-container.scss */
 .main-container .checkin {
   background-color: red;
   background-color: red;
 }
-/* line 316, ../../../sass/modules/_main-container.scss */
+/* line 348, ../../../sass/modules/_main-container.scss */
 .main-container .info {
   background-color: green;
   background-color: green;

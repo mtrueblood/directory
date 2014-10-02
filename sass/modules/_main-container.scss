@@ -157,6 +157,17 @@
                             display: none;
                             z-index: 99999;
 
+                            @include bp(small) {
+                                height: 480px;
+                                position: fixed;
+                                float: none;
+                                top: 108px;
+                                left: -164px;
+                                width: 600px;
+                                display: none;
+                                z-index: 99999;
+                            }
+
                             a {
                                 color: #fff;
                                 text-decoration: none;
@@ -185,6 +196,9 @@
                                 max-width: 300px;
                                 min-width: 300px;
                                 width: 300px;
+                                @include bp(small) {
+                                    top: 436px;
+                                }
                             }
 
                             .title {
@@ -197,6 +211,9 @@
                                 min-width: 320px;
                                 text-transform: uppercase;
                                 font-weight: 500;
+                                @include bp(small) {
+                                    top: 478px;
+                                }
                             }
 
                             .phone {
@@ -206,6 +223,9 @@
                                 z-index: 9999;
                                 font-size: $font13;
                                 max-width: 300px;
+                                @include bp(small) {
+                                    top: 553px;
+                                }
                             }
 
                             .email {
@@ -215,6 +235,9 @@
                                 z-index: 9999;
                                 font-size: $font13;
                                 max-width: 300px;
+                                @include bp(small) {
+                                    top: 514px;
+                                }
                             }
 
                         }
@@ -273,6 +296,9 @@
                         font-size: $font20;
                         position: absolute;
                         left: 438px;
+                        @include bp(small) {
+                            left: 485px;
+                        }
                         top: 23px;
                         display: inline-block;
                         cursor: pointer;
@@ -280,10 +306,16 @@
                     &.bell {
                         font-size: $font20;
                         position: absolute;
-                        right: 23px;
+                        left: 23px;
+                        left: calc(100% - 52px);
+                        @include bp(small) {
+                            left: calc(100% - 30px);
+                        }
                         top: 23px;
                         display: inline-block;
                         cursor: pointer;
+
+
                     }
 
                     &.office,
