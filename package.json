@@ -26,6 +26,7 @@
     "grunt-open": "~0.2.1",
     "grunt-includes": "~0.3.4",
     "connect-livereload": "~0.2.0",
-    "grunt-contrib-jst": "^0.6.0"
+    "grunt-contrib-jst": "^0.6.0",
+    "grunt-githooks": "^0.3.1"
   }
 }

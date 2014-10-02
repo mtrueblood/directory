@@ -49,6 +49,15 @@ module.exports = function(grunt) {
           }
         },
 
+        githooks: {
+            all: {
+                'pre-commit': 'jshint',
+            }
+        },
+
+
+
+
         clean: {
             dev: [
                 '<%= working_base_folder %>/assets/scripts/global.js',
@@ -260,6 +269,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-banner');
     grunt.loadNpmTasks('grunt-includes');
     grunt.loadNpmTasks('grunt-contrib-jst');
+    grunt.loadNpmTasks( 'grunt-githooks' );
 
     // Default task
     grunt.registerTask('default', 'runs my tasks', function () {
