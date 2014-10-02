@@ -1,4 +1,3 @@
 .content-wrapper .wrapper {
-    @include alpha-attribute('background-color', rgba(black, 0.5), white);
     height: 100%;
 }
