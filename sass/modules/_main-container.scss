@@ -153,7 +153,7 @@
                             float: none;
                             top: 0px;
                             left: -164px;
-                            width: 500px;
+                            width: 600px;
                             display: none;
                             z-index: 99999;
 
@@ -178,7 +178,7 @@
 
                             .name {
                                 position: fixed;
-                                bottom: 86px;
+                                top: 290px;
                                 left: -9px;
                                 z-index: 9999;
                                 font-size: $font26;
@@ -189,7 +189,7 @@
 
                             .title {
                                 position: fixed;
-                                bottom: 59px;
+                                top: 331px;
                                 left: -7px;
                                 z-index: 9999;
                                 font-size: $font11;
@@ -201,7 +201,7 @@
 
                             .phone {
                                 position: fixed;
-                                bottom: 13px;
+                                top: 393px;
                                 left: -7px;
                                 z-index: 9999;
                                 font-size: $font13;
@@ -210,7 +210,7 @@
 
                             .email {
                                 position: fixed;
-                                bottom: 39px;
+                                top: 361px;
                                 left: -7px;
                                 z-index: 9999;
                                 font-size: $font13;
@@ -269,7 +269,14 @@
                         font-size: $font13;
                         text-transform: uppercase;
                     }
-                    &.close,
+                    &.close {
+                        font-size: $font20;
+                        position: absolute;
+                        left: 438px;
+                        top: 23px;
+                        display: inline-block;
+                        cursor: pointer;
+                    }
                     &.bell {
                         font-size: $font20;
                         position: absolute;
