@@ -1,33 +1,37 @@
-"use strict";
-
+/* jshint -W030 */
 !function() {
+    'use strict';
 
     var w = window
         , d = document
         , e = d.documentElement
         , g = d.getElementsByTagName('body')[0]
         , winWidth = w.innerWidth || e.clientWidth || g.clientWidth
-        , winHeight = w.innerHeight|| e.clientHeight|| g.clientHeight
+        //, winHeight = w.innerHeight|| e.clientHeight|| g.clientHeight
         , landingContainer = '.landing'
         , cur_location = 'detroit'
+        , Parse
         ;
 
-        var directory = {
+    var directory = {
+
         appInit: function(){
 
             // Fade-Out Sapient Landing
-            setTimeout(function(){ $(landingContainer).fadeOut(200) }, 2000);
+            setTimeout(function(){
+                $(landingContainer).fadeOut(200);
+            }, 2000);
             // Initialize Parse Application
-            Parse.initialize("uNtjzJdbGtEmC5n6ZoB3MkYbdlB23i5qeXejOT0O", "N1wO2Ceogq6ZPld1F6J6N4I6q6P4K8UXgWmI1yyu");
+            Parse.initialize('uNtjzJdbGtEmC5n6ZoB3MkYbdlB23i5qeXejOT0O', 'N1wO2Ceogq6ZPld1F6J6N4I6q6P4K8UXgWmI1yyu');
             this.queryData();
         },
 
         queryData: function(){
 
-            var UserData = Parse.Object.extend("directory");
+            var UserData = Parse.Object.extend('directory');
             var query = new Parse.Query(UserData);
             var that = this;
-            query.ascending("lName");
+            query.ascending('lName');
             query.find({
 
                 success: function(results) {
@@ -47,11 +51,11 @@
                             , homeOffice = ''
                             ;
 
-                        if(phone != 'n/a'){
+                        if(phone !== 'n/a'){
                             phone = phone.substr(0, 3) + '-' + phone.substr(3, 3) + '-' + phone.substr(6,4);
                         }
 
-                        if(cur_location != office){
+                        if(cur_location !== office){
                             homeOffice = 'not-home';
                         }
 
@@ -59,7 +63,7 @@
                         html += '  <span class="user"><img src="assets/images/office/detroit/'+lName+'-'+fName+'.jpg"></span>';
                         html += '  <div class="user-container">';
                         html += '      <div class="user-flex">';
-                        html += '          <div class="user-info user-default">';
+                        html += '          <div class="user-info user-default '+currentlyAt+'">';
                         html += '              <span class="name">'+fName+' '+lName+'</span>';
                         html += '              <span class="title">'+title+'</span>';
                         html += '              <span class="bell"><i class="icon-address-book"></i></span>';
@@ -80,11 +84,11 @@
 
                     document.querySelector('.directory ul').innerHTML = html;
 
-              },
-              error: function(error) {
+                },
+                error: function(error) {
 
-                console.log("Error: " + error.code + " " + error.message);
-              }
+                    console.log('Error: ' + error.code + ' ' + error.message);
+                }
 
             }).then(function(){
 
@@ -97,8 +101,8 @@
             $(document).on('keyup keypress focus focusin focusout', '.search input', function () {
 
                 var filter = $(this).val().toLowerCase(); // get the value of the input, which we filter on
-                $('.directory li').find("span.name:not(:contains(" + filter + "))").closest('li').slideUp();
-                $('.directory li').find("span.name:contains(" + filter + ")").closest('li').slideDown();
+                $('.directory li').find('span.name:not(:contains(' + filter + '))').closest('li').slideUp();
+                $('.directory li').find('span.name:contains(' + filter + ')').closest('li').slideDown();
             });
 
             // Nav Menu Event Handler
@@ -113,11 +117,11 @@
                         , allSections = '.section'
                         ;
 
-                    if(dataAtt == 'directory'){
+                    if(dataAtt === 'directory'){
 
                         document.querySelector('h1').style.height = '139px';
-                        document.querySelector('.section').style.top = '139px';
-                        document.querySelector('.section').style.height = '56%';
+                        document.querySelector(allSections).style.top = '139px';
+                        document.querySelector(allSections).style.height = '56%';
                         document.querySelector('.search').style.display = 'inline';
                         document.querySelector('.welcome').style.display = 'none';
                     } else {
@@ -160,7 +164,7 @@
             });
 
         }
-    }
+    };
 
     return directory.appInit();
 

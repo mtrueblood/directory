@@ -190,22 +190,10 @@ module.exports = function(grunt) {
         },
 
         jshint: {
+            all: ['site/assets/scripts/document-ready.js'],
             options: {
-                camelcase: true,
-                forin: true,
-                curly: true,
-                eqeqeq: true,
-                eqnull: true,
-                immed: true,
-                undef: true,
-                maxdepth: 3,
-                browser: true,
-                globals: {
-                    jQuery: true,
-                    '$': true,
-                    "console": true,
-                },
-            },
+                jshintrc: '.jshintrc'
+            }
         },
 
         connect: {
@@ -275,6 +263,7 @@ module.exports = function(grunt) {
     grunt.registerTask('default', 'runs my tasks', function () {
         var tasks = [
             'clean:dev',
+            'jshint',
             'concat:javascript',
             'concat:vendors',
             'compass:dev',
