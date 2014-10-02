@@ -161,14 +161,8 @@
                             z-index: 99999;
 
                             @include bp(small) {
-                                height: 480px;
-                                position: fixed;
-                                float: none;
+                                height: 449px;
                                 top: 139px;
-                                left: -164px;
-                                width: 600px;
-                                display: none;
-                                z-index: 99999;
                             }
 
                             a {
