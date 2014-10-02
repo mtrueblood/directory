@@ -99,6 +99,7 @@
 
         events: function(){
 
+            // search functionality
             $(document).on('keyup keypress focus focusin focusout', '.search input', function () {
 
                 var filter = $(this).val().toLowerCase(); // get the value of the input, which we filter on
@@ -106,7 +107,7 @@
                 $('.directory li').find('span.name:contains(' + filter + ')').closest('li').slideDown();
             });
 
-            // Nav Menu Event Handler
+            // Footer Nav Menu
             [].forEach.call(document.querySelectorAll('nav a'), function(el) {
                 el.addEventListener('click', function(e) {
 
@@ -140,7 +141,7 @@
                 });
             });
 
-            // Bell Event Handler
+            // Icon click to show more info overlay
             [].forEach.call(document.querySelectorAll('.bell'), function(el) {
                 el.addEventListener('click', function(e) {
 
@@ -157,7 +158,7 @@
                 });
             });
 
-            // Bell Event Handler
+            // Close more info overlay
             [].forEach.call(document.querySelectorAll('.close'), function(el) {
                 el.addEventListener('click', function(e) {
 
