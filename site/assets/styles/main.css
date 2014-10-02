@@ -2949,26 +2949,26 @@ body {
   width: 233px;
   height: 77px;
 }
-/* line 233, ../../../sass/modules/_main-container.scss */
+/* line 231, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span {
   display: inline-block;
   text-align: left;
 }
-/* line 237, ../../../sass/modules/_main-container.scss */
+/* line 235, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.user {
   float: left;
   width: 77px;
   height: 77px;
   overflow: hidden;
 }
-/* line 242, ../../../sass/modules/_main-container.scss */
+/* line 241, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.user img {
   width: auto;
   height: 100%;
   position: relative;
   left: -10px;
 }
-/* line 250, ../../../sass/modules/_main-container.scss */
+/* line 249, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.title {
   width: 66%;
   max-width: 158px;
@@ -2979,7 +2979,7 @@ body {
   text-transform: capitalize;
   height: 31px;
 }
-/* line 260, ../../../sass/modules/_main-container.scss */
+/* line 259, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.name {
   width: 66%;
   max-width: 158px;
@@ -2993,7 +2993,7 @@ body {
   font-size: 1rem;
   text-transform: uppercase;
 }
-/* line 274, ../../../sass/modules/_main-container.scss */
+/* line 273, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.close, .main-container .directory ul li span.bell {
   font-size: 1.538rem;
   position: absolute;
@@ -3002,26 +3002,26 @@ body {
   display: inline-block;
   cursor: pointer;
 }
-/* line 285, ../../../sass/modules/_main-container.scss */
+/* line 284, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.office, .main-container .directory ul li span.phone, .main-container .directory ul li span.email {
   clear: both;
   width: 100%;
   padding: 0px 0 0 20px;
 }
-/* line 291, ../../../sass/modules/_main-container.scss */
+/* line 290, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.office {
   text-transform: uppercase;
 }
-/* line 295, ../../../sass/modules/_main-container.scss */
+/* line 294, ../../../sass/modules/_main-container.scss */
 .main-container .directory ul li span.email {
   padding-top: 8px;
 }
-/* line 306, ../../../sass/modules/_main-container.scss */
+/* line 305, ../../../sass/modules/_main-container.scss */
 .main-container .checkin {
   background-color: red;
   background-color: red;
 }
-/* line 310, ../../../sass/modules/_main-container.scss */
+/* line 309, ../../../sass/modules/_main-container.scss */
 .main-container .info {
   background-color: green;
   background-color: green;
