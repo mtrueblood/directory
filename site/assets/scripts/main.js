@@ -7,7 +7,7 @@
         , e = d.documentElement
         , g = d.getElementsByTagName('body')[0]
         , winWidth = w.innerWidth || e.clientWidth || g.clientWidth
-        //, winHeight = w.innerHeight|| e.clientHeight|| g.clientHeight
+        , winHeight = w.innerHeight|| e.clientHeight|| g.clientHeight
         , landingContainer = '.landing'
         , cur_location = 'detroit'
         ;
@@ -150,7 +150,10 @@
                     $(that, '.bell').parent().next().fadeIn(200);
 
                     $('.section').css({'zIndex': '104', 'position': 'fixed', 'top': '0', 'height': '422px'});
-                    document.querySelector('.search, h1, nav').style.display = 'none';
+
+                    if(winHeight <= 630){
+                        document.querySelector('.search, h1, nav').style.display = 'none';
+                    }
                 });
             });
 
