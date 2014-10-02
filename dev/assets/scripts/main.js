@@ -122,7 +122,8 @@
 
                         document.querySelector(landingContainer).style.display = 'none';
                         document.querySelector('h1').style.height = '139px';
-                        document.querySelector(allSections).setAttribute('style', 'top: 139px; height: 56%;');
+                        document.querySelector(allSections).style.top = '139px';
+                        document.querySelector(allSections).style.height = '56%';
                         document.querySelector('.search').style.display = 'inline';
                         document.querySelector('.welcome').style.display = 'none';
                     } else {
@@ -147,7 +148,8 @@
                     var that = this;
 
                     $(that, '.bell').parent().next().fadeIn(200);
-                    document.querySelector('.section').setAttribute('style', 'z-index: 104; position: fixed; top: 0; height: 422px;');
+
+                    $('.section').css({'zIndex': '104', 'position': 'fixed', 'top': '0', 'height': '422px'});
                     document.querySelector('.search, h1, nav').style.display = 'none';
                 });
             });
