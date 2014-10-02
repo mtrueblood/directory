@@ -1,6 +1,6 @@
 "use strict";
 
-var directory = (function () {
+!function() {
 
     var w = window
         , d = document
@@ -12,9 +12,9 @@ var directory = (function () {
         , cur_location = 'detroit'
         ;
 
-    return {
-
+        var directory = {
         appInit: function(){
+
             // Fade-Out Sapient Landing
             setTimeout(function(){ $(landingContainer).fadeOut(200) }, 2000);
             // Initialize Parse Application
@@ -23,25 +23,29 @@ var directory = (function () {
         },
 
         queryData: function(){
+
             var UserData = Parse.Object.extend("directory");
             var query = new Parse.Query(UserData);
             var that = this;
             query.ascending("lName");
             query.find({
+
                 success: function(results) {
 
                     var html = '';
 
                     for (var i = 0; i < results.length; i++) {
-                        var object = results[i];
-                        var fName = object.get('fName');
-                        var lName = object.get('lName');
-                        var title = object.get('title');
-                        var email = object.get('email');
-                        var phone = object.get('phone');
-                        var office = object.get('office');
-                        var currentlyAt = object.get('currently');
-                        var homeOffice = '';
+
+                        var object = results[i]
+                            , fName = object.get('fName')
+                            , lName = object.get('lName')
+                            , title = object.get('title')
+                            , email = object.get('email')
+                            , phone = object.get('phone')
+                            , office = object.get('office')
+                            , currentlyAt = object.get('currently')
+                            , homeOffice = ''
+                            ;
 
                         if(phone != 'n/a'){
                             phone = phone.substr(0, 3) + '-' + phone.substr(3, 3) + '-' + phone.substr(6,4);
@@ -52,13 +56,10 @@ var directory = (function () {
                         }
 
                         html += '<li class="active '+homeOffice+'">';
-
                         html += '  <span class="user"><img src="assets/images/office/detroit/'+lName+'-'+fName+'.jpg"></span>';
-
                         html += '  <div class="user-container">';
                         html += '      <div class="user-flex">';
                         html += '          <div class="user-info user-default">';
-
                         html += '              <span class="name">'+fName+' '+lName+'</span>';
                         html += '              <span class="title">'+title+'</span>';
                         html += '              <span class="bell"><i class="icon-address-book"></i></span>';
@@ -77,13 +78,16 @@ var directory = (function () {
 
                     }
 
-                    $('.directory ul').append(html);
+                    document.querySelector('.directory ul').innerHTML = html;
 
               },
               error: function(error) {
+
                 console.log("Error: " + error.code + " " + error.message);
               }
+
             }).then(function(){
+
                 that.events();
             });
         },
@@ -91,6 +95,7 @@ var directory = (function () {
         events: function(){
 
             $(document).on('keyup keypress focus focusin focusout', '.search input', function () {
+
                 var filter = $(this).val().toLowerCase(); // get the value of the input, which we filter on
                 $('.directory li').find("span.name:not(:contains(" + filter + "))").closest('li').slideUp();
                 $('.directory li').find("span.name:contains(" + filter + ")").closest('li').slideDown();
@@ -99,23 +104,30 @@ var directory = (function () {
             // Nav Menu Event Handler
             [].forEach.call(document.querySelectorAll('nav a'), function(el) {
                 el.addEventListener('click', function(e) {
+
                     e.preventDefault();
-                    var that = this;
-                    var dataAtt = that.getAttribute('data-section');
-                    var section = '.' + dataAtt;
-                    var allSections = '.section';
+
+                    var that = this
+                        , dataAtt = that.getAttribute('data-section')
+                        , section = '.' + dataAtt
+                        , allSections = '.section'
+                        ;
 
                     if(dataAtt == 'directory'){
-                        $('h1').css('height', '139px');
-                        $('.section').css({'top' : '139px', 'height' : '56%'});
-                        $('.search').show();
-                        $('.welcome').hide();
+
+                        document.querySelector('h1').style.height = '139px';
+                        document.querySelector('.section').style.top = '139px';
+                        document.querySelector('.section').style.height = '56%';
+                        document.querySelector('.search').style.display = 'inline';
+                        document.querySelector('.welcome').style.display = 'none';
                     } else {
-                       $('h1').css('height', '90px');
-                       $('.section').css({'top' : '90px', 'height' : '66%'});
+
+                        document.querySelector('h1').style.height = '90px';
+                        $('.section').css({'top' : '90px', 'height' : '66%'});
                     }
 
-                    $('.section').animate({left: '-'+winWidth+'px'}, 200).promise().done(function(){
+                    $('.section').animate({left: '-'+ winWidth +'px'}, 200).promise().done(function(){
+
                         $(section).animate({left: '0px'}, 200);
                     });
 
@@ -125,41 +137,34 @@ var directory = (function () {
             // Bell Event Handler
             [].forEach.call(document.querySelectorAll('.bell'), function(el) {
                 el.addEventListener('click', function(e) {
-                    e.preventDefault();
 
+                    e.preventDefault();
                     var that = this;
 
-                    $(this, '.bell').parent().next().fadeIn(200);
-                    $('.section').css({'zIndex' : '104', 'position' : 'fixed', 'top' : '0', 'height': '422px'});
-                    $('.search, h1, nav').hide();
-
+                    $(that, '.bell').parent().next().fadeIn(200);
+                    document.querySelector('.section').setAttribute('style', 'z-index: 104; position: fixed; top: 0; height: 422px;');
+                    document.querySelector('.search, h1, nav').style.display = 'none';
                 });
             });
 
             // Bell Event Handler
             [].forEach.call(document.querySelectorAll('.close'), function(el) {
                 el.addEventListener('click', function(e) {
+
                     e.preventDefault();
-
                     var that = this;
-
                     $(that).parent().fadeOut(200);
-                    $('.section').css({'zIndex' : '101', 'position' : 'absolute', 'top' : '139px', 'height': '56%'});
+                    $('.directory.section').css({'zIndex' : '101', 'position' : 'absolute', 'top' : '139px', 'height': '56%', 'left': '0px'});
                     $('.search, h1, nav').show();
                 });
             });
 
         }
-
     }
 
-})();
+    return directory.appInit();
 
-directory.appInit();
-
-
-
-
+}();
 
 (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
 function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
