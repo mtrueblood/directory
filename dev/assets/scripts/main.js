@@ -122,8 +122,7 @@
 
                         document.querySelector(landingContainer).style.display = 'none';
                         document.querySelector('h1').style.height = '139px';
-                        document.querySelector(allSections).style.top = '139px';
-                        document.querySelector(allSections).style.height = '56%';
+                        document.querySelector(allSections).setAttribute('style', 'top: 139px; height: 56%;');
                         document.querySelector('.search').style.display = 'inline';
                         document.querySelector('.welcome').style.display = 'none';
                     } else {
