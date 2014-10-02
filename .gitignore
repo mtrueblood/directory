@@ -1,6 +1,7 @@
 *.DS_Store
 /.sass-cache/*
 /site/.sass-cache/*
+/site/assets/styles/main.css
 .sass-cache/*
 /dev/sass-cache/*
 /node_modules/*
