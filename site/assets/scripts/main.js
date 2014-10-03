@@ -73,7 +73,9 @@
                         html += '              <span class="name">'+fName+' '+lName+'</span>';
                         html += '              <span class="title">'+title+'</span>';
                         html += '              <span class="email"><i class="icon-mail4"></i><a href="mailto:'+email+'" target="_blank">'+email+'</a></span>';
-                        html += '              <span class="phone"><i class="icon-phone"></i><a href="tel:'+phone+'"  target="_blank">'+phone+'</a></span>';
+                        if(phone !== 'n/a'){
+                            html += '              <span class="phone"><i class="icon-phone"></i><a href="tel:'+phone+'"  target="_blank">'+phone+'</a></span>';
+                        }
                         html += '              <span class="office">'+office+'</span>';
                         html += '              <span class="close"><i class="icon-close"></i></span>';
                         html += '          </div>';
