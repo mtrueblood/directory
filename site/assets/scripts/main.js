@@ -147,14 +147,16 @@
                 el.addEventListener('click', function(e) {
 
                     e.preventDefault();
-                    var that = this;
+                    var that = this
+                        , directoryElems = document.querySelector('.search, h1, nav').style
+                        ;
 
                     $(that, '.user-info-icon').parent().next().fadeIn(200);
 
                     $('.section').css({'zIndex': '104', 'position': 'fixed', 'top': '0', 'height': '422px'});
 
                     if(winHeight <= 630){
-                        document.querySelector('.search, h1, nav').style.display = 'none';
+                        directoryElems.display = 'none';
                     }
                 });
             });
