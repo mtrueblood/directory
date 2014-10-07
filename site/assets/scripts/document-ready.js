@@ -63,7 +63,7 @@
                         html += '          <div class="user-info user-default '+currentlyAt+'">';
                         html += '              <span class="name">'+fName+' '+lName+'</span>';
                         html += '              <span class="title">'+title+'</span>';
-                        html += '              <span class="bell"><i class="icon-address-book"></i></span>';
+                        html += '              <span class="user-info-icon"><i class="icon-address-book"></i></span>';
                         html += '          </div>';
                         html += '          <div class="user-info user-details" style="background: #ccc url(assets/images/office/detroit/'+lName+'-'+fName+'.jpg) 0 0 no-repeat;">';
                         html += '              <span class="name">'+fName+' '+lName+'</span>';
@@ -140,13 +140,13 @@
             });
 
             // Icon click to show more info overlay
-            [].forEach.call(document.querySelectorAll('.bell'), function(el) {
+            [].forEach.call(document.querySelectorAll('.user-info-icon'), function(el) {
                 el.addEventListener('click', function(e) {
 
                     e.preventDefault();
                     var that = this;
 
-                    $(that, '.bell').parent().next().fadeIn(200);
+                    $(that, '.user-info-icon').parent().next().fadeIn(200);
 
                     $('.section').css({'zIndex': '104', 'position': 'fixed', 'top': '0', 'height': '422px'});
 

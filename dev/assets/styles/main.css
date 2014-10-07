@@ -1,4 +1,3 @@
-/*! Sapient office directory containing locations, travelers, directory and food. v0.0.1 | Copyright (c) 2014 | Thu, 02 Oct 2014 15:42:05 EDT */
 @font-face {
   font-family: 'icomoon';
   src: url("fonts/icomoon.eot?-f033ky");
@@ -3047,7 +3046,7 @@ body {
   }
 }
 /* line 303, ../../../sass/modules/_main-container.scss */
-.main-container .directory ul li span.bell {
+.main-container .directory ul li span.user-info-icon {
   font-size: 1.538rem;
   position: absolute;
   left: 23px;
@@ -3058,7 +3057,7 @@ body {
 }
 @media (min-width: 360px) {
   /* line 303, ../../../sass/modules/_main-container.scss */
-  .main-container .directory ul li span.bell {
+  .main-container .directory ul li span.user-info-icon {
     left: calc(100% - 30px);
   }
 }
