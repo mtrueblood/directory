@@ -16,12 +16,6 @@
 
         appInit: function(){
 
-            // Fade-Out Sapient Landing
-            /*
-            setTimeout(function(){
-                $(landingContainer).fadeOut(200);
-            }, 2000);
-            */
             // Initialize Parse Application
             Parse.initialize('uNtjzJdbGtEmC5n6ZoB3MkYbdlB23i5qeXejOT0O', 'N1wO2Ceogq6ZPld1F6J6N4I6q6P4K8UXgWmI1yyu');
             this.queryData();
@@ -29,9 +23,11 @@
 
         queryData: function(){
 
-            var UserData = Parse.Object.extend('directory');
-            var query = new Parse.Query(UserData);
-            var that = this;
+            var UserData = Parse.Object.extend('directory')
+                , query = new Parse.Query(UserData)
+                , that = this
+                ;
+
             query.ascending('lName');
             query.find({
 
