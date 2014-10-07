@@ -114,20 +114,23 @@
                     var that = this
                         , dataAtt = that.getAttribute('data-section')
                         , section = '.' + dataAtt
-                        , allSections = '.section'
+                        , heading = document.querySelector('h1').style
+                        , allSections = document.querySelector('.section').style
+                        , search = document.querySelector('.search').style
+                        , welcome = document.querySelector('.welcome').style
                         ;
 
                     if(dataAtt === 'directory'){
 
                         document.querySelector(landingContainer).style.display = 'none';
-                        document.querySelector('h1').style.height = '139px';
-                        document.querySelector(allSections).style.top = '139px';
-                        document.querySelector(allSections).style.height = '56%';
-                        document.querySelector('.search').style.display = 'inline';
-                        document.querySelector('.welcome').style.display = 'none';
+                        heading.height = '139px';
+                        allSections.top = '139px';
+                        allSections.height = '56%';
+                        search.display = 'inline';
+                        welcome.display = 'none';
                     } else {
 
-                        document.querySelector('h1').style.height = '90px';
+                        heading.height = '90px';
                         $('.section').css({'top' : '90px', 'height' : '66%'});
                     }
 
