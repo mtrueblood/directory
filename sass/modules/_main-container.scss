@@ -86,6 +86,7 @@
         -webkit-overflow-scrolling: touch;
     }
 
+    .checkin,
     .directory {
         height: 56%;
         padding-bottom: 35px;
@@ -159,6 +160,7 @@
                             width: 600px;
                             display: none;
                             z-index: 99999;
+                            background-size: cover;
 
                             @include bp(small) {
                                 height: 449px;
@@ -338,11 +340,9 @@
         }
     }
 
-    .checkin {
-        @include alpha-attribute('background-color', rgba(red, 1), red);
-    }
-
     .info {
-        @include alpha-attribute('background-color', rgba(green, 1), green);
+        #map {
+            height: 100%;
+        }
     }
 }

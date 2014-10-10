@@ -6,7 +6,8 @@
         "Modernizr": false,
         "matchMedia": false,
         "module": false,
-        "Parse": false
+        "Parse": false,
+        "GMaps": false
     },
 
     "laxcomma": true,       // Suppresses warnings about comma-first coding style http://www.jshint.com/docs/options/#laxcomma

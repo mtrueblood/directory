@@ -19,6 +19,84 @@
             // Initialize Parse Application
             Parse.initialize('uNtjzJdbGtEmC5n6ZoB3MkYbdlB23i5qeXejOT0O', 'N1wO2Ceogq6ZPld1F6J6N4I6q6P4K8UXgWmI1yyu');
             this.queryData();
+            this.geoLocate();
+        },
+
+        getOffice: function(location, point){
+            var offices = {};
+
+            offices = {
+                'detroit' : {
+                    'latitude' : '42.546897',
+                    'longitude' : '-83.214471'
+                }
+            };
+
+            return offices[cur_location][point];
+
+        },
+
+        showPosition: function(position){
+
+            var userLatitude = position.coords.latitude
+                , userLongitude = position.coords.longitude
+                , officeLatitude = directory.getOffice(cur_location, 'latitude')
+                , officeLongitude = directory.getOffice(cur_location, 'longitude')
+                ;
+
+            var map = new GMaps({
+                div: '#map',
+                lat: officeLatitude,
+                lng: officeLongitude
+            });
+
+            var path = [
+                [42.547334,-83.215245],
+                [42.547540,-83.214773],
+                [42.547208,-83.214515],
+                [42.547018,-83.214955],
+                [42.547334,-83.215224]
+            ];
+
+            var polygon = map.drawPolygon({
+                paths: path, // pre-defined polygon shape
+                strokeColor: '#BBD8E9',
+                strokeOpacity: 1,
+                strokeWeight: 3,
+                fillColor: '#BBD8E9',
+                fillOpacity: 0.6
+            });
+
+            var marker = map.addMarker({
+                lat: userLatitude,
+                lng: userLongitude,
+                draggable: true,
+                fences: [polygon],
+                outside: function(marker, fence) {
+                    //alert('This marker has been moved outside of its fence');
+                    console.log('outside fence');
+                },
+                inside: function(marker, fence){
+                    //alert('This marker has been moved inside of its fence');
+                    console.log('inside fence');
+                }
+            });
+
+            map.checkMarkerGeofence(marker, directory.inFence);
+
+        },
+
+        inFence: function(m, f){
+            console.log(m.inside());
+        },
+
+        geoLocate: function(){
+
+            var that = this;
+
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(that.showPosition);
+            }
         },
 
         queryData: function(){
@@ -33,8 +111,6 @@
 
                 success: function(results) {
 
-                    var html = '';
-
                     for (var i = 0; i < results.length; i++) {
 
                         var object = results[i]
@@ -45,27 +121,30 @@
                             , phone = object.get('phone')
                             , office = object.get('office')
                             , currentlyAt = object.get('currently')
-                            , homeOffice = ''
+                            , inOffice = ''
                             ;
 
                         if(phone !== 'n/a'){
                             phone = phone.substr(0, 3) + '-' + phone.substr(3, 3) + '-' + phone.substr(6,4);
                         }
 
+
+
                         if(cur_location !== office){
-                            homeOffice = 'not-home';
+                            inOffice = '<br>' + office;
                         }
 
-                        html += '<li class="active '+homeOffice+'">';
-                        html += '  <span class="user"><img src="assets/images/office/detroit/'+lName+'-'+fName+'.jpg"></span>';
+                        var html = '';
+                        html += '<li class="active">';
+                        html += '  <span class="user"><img src="assets/images/office/'+office+'/'+lName+'-'+fName+'.jpg"></span>';
                         html += '  <div class="user-container">';
                         html += '      <div class="user-flex">';
                         html += '          <div class="user-info user-default '+currentlyAt+'">';
                         html += '              <span class="name">'+fName+' '+lName+'</span>';
-                        html += '              <span class="title">'+title+'</span>';
+                        html += '              <span class="title">'+title+' ' + inOffice + '</span>';
                         html += '              <span class="user-info-icon"><i class="icon-address-book"></i></span>';
                         html += '          </div>';
-                        html += '          <div class="user-info user-details" style="background: #ccc url(assets/images/office/detroit/'+lName+'-'+fName+'.jpg) 0 0 no-repeat;">';
+                        html += '          <div class="user-info user-details" style="background: #ccc url(assets/images/office/'+office+'/'+lName+'-'+fName+'.jpg) 0 0 no-repeat;">';
                         html += '              <span class="name">'+fName+' '+lName+'</span>';
                         html += '              <span class="title">'+title+'</span>';
                         html += '              <span class="email"><i class="icon-mail4"></i><a href="mailto:'+email+'" target="_blank">'+email+'</a></span>';
@@ -79,9 +158,15 @@
                         html += '  </div>';
                         html += '</li>';
 
+                        if(cur_location === office){
+                            $('.directory ul').append(html);
+                        } else {
+                            $('.checkin ul').append(html);
+                        }
+
                     }
 
-                    document.querySelector('.directory ul').innerHTML = html;
+
 
                 },
                 error: function(error) {
@@ -101,8 +186,8 @@
             $(document).on('keyup keypress focus focusin focusout', '.search input', function () {
 
                 var filter = $(this).val().toLowerCase(); // get the value of the input, which we filter on
-                $('.directory li').find('span.name:not(:contains(' + filter + '))').closest('li').slideUp();
-                $('.directory li').find('span.name:contains(' + filter + ')').closest('li').slideDown();
+                $('.directory li, .checkin li').find('span.name:not(:contains(' + filter + '))').closest('li').slideUp();
+                $('.directory li, .checkin li').find('span.name:contains(' + filter + ')').closest('li').slideDown();
             });
 
             // Footer Nav Menu
@@ -115,17 +200,21 @@
                         , dataAtt = that.getAttribute('data-section')
                         , section = '.' + dataAtt
                         , heading = document.querySelector('h1').style
-                        , allSections = document.querySelector('.section').style
+                        , allSections = document.querySelector('.' + dataAtt).style
                         , search = document.querySelector('.search').style
                         , welcome = document.querySelector('.welcome').style
                         ;
 
-                    if(dataAtt === 'directory'){
+                    $('nav a').removeClass('open');
+                    $(that).addClass('open');
+
+                    if(dataAtt === 'directory' || dataAtt === 'checkin'){
 
                         document.querySelector(landingContainer).style.display = 'none';
                         heading.height = '139px';
                         allSections.top = '139px';
                         allSections.height = '56%';
+                        allSections.zIndex = '101';
                         search.display = 'inline';
                         welcome.display = 'none';
                     } else {
@@ -166,10 +255,13 @@
                 el.addEventListener('click', function(e) {
 
                     e.preventDefault();
-                    var that = this;
+                    var that = this
+                        , section = $('nav a.open').data('section')
+                        ;
+
                     $(that).parent().fadeOut(200);
-                    $('.directory.section').css({'zIndex' : '101', 'position' : 'absolute', 'top' : '139px', 'height': '56%', 'left': '0px'});
-                    $('.search, h1, nav').show();
+                    $('.'+section+'.section').css({'zIndex' : '101', 'position' : 'absolute', 'top' : '139px', 'height': '56%', 'left': '0px'});
+                    document.querySelector('.search, h1, nav').style.display = 'block';
                 });
             });
 
