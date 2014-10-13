@@ -67,27 +67,17 @@
                 fillOpacity: 0.6
             });
 
-            var marker = map.addMarker({
-                lat: userLatitude,
-                lng: userLongitude,
-                draggable: true,
-                fences: [polygon],
-                outside: function(marker, fence) {
-                    //alert('This marker has been moved outside of its fence');
-                    console.log('outside fence');
-                },
-                inside: function(marker, fence){
-                    //alert('This marker has been moved inside of its fence');
-                    console.log('inside fence');
-                }
-            });
+            if( !map.checkGeofence(userLatitude, userLongitude, polygon) ) {
+                alert('user not in geofence');
+            } else {
+                alert('user in geofence');
+            }
 
-            map.checkMarkerGeofence(marker, directory.inFence);
 
         },
 
         inFence: function(m, f){
-            console.log(m.inside());
+            //console.log(m.inside());
         },
 
         geoLocate: function(){
@@ -135,7 +125,7 @@
                         }
 
                         var html = '';
-                        html += '<li class="active">';
+                        html += '<li data-user="'+lName+'-'+fName+'" class="active">';
                         html += '  <span class="user"><img src="assets/images/office/'+office+'/'+lName+'-'+fName+'.jpg"></span>';
                         html += '  <div class="user-container">';
                         html += '      <div class="user-flex">';
