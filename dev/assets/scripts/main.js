@@ -16,6 +16,7 @@
 
         appInit: function(){
 
+            $('.directory ul, .checkin ul').empty();
             // Initialize Parse Application
             Parse.initialize('uNtjzJdbGtEmC5n6ZoB3MkYbdlB23i5qeXejOT0O', 'N1wO2Ceogq6ZPld1F6J6N4I6q6P4K8UXgWmI1yyu');
             this.queryData();
@@ -57,6 +58,14 @@
                 [42.547018,-83.214955],
                 [42.547334,-83.215224]
             ];
+            /*
+            var path = [
+                [42.488349,-83.119597],
+                [42.488349,-83.118439],
+                [42.487606,-83.118396],
+                [42.487606,-83.119533],
+                [42.488326,-83.119608]
+            ];*/
 
             var polygon = map.drawPolygon({
                 paths: path, // pre-defined polygon shape
@@ -67,17 +76,46 @@
                 fillOpacity: 0.6
             });
 
-            if( !map.checkGeofence(userLatitude, userLongitude, polygon) ) {
-                alert('user not in geofence');
-            } else {
-                alert('user in geofence');
-            }
+            var currentUser = Parse.User.current();
+            if (currentUser) {
+                var email = currentUser.get('email');
 
+                if( !map.checkGeofence(userLatitude, userLongitude, polygon) ) {
+                    console.log('user not in geofence');
+                    directory.updateUserLocation(email, false);
+                } else {
+                    console.log('user in geofence');
+                    directory.updateUserLocation(email, true);
+                }
+            }
 
         },
 
-        inFence: function(m, f){
-            //console.log(m.inside());
+        updateUserLocation: function(email, inFence){
+            var UserStatus = Parse.Object.extend('directory');
+            var query = new Parse.Query(UserStatus);
+            query.equalTo('email', email);
+            var location = cur_location;
+            if(inFence !== true){
+                location = '';
+            }
+            query.first({
+                success: function (Contact) {
+                    Contact.save(null, {
+                        success: function (contact) {
+
+                            contact.set('currentlyAt', location);
+                            contact.save();
+                        }
+                    });
+
+                    if(inFence !== true){
+                        $('li[data-email="'+email+'"]').removeClass('active').addClass('inactive');
+                    } else {
+                        $('li[data-email="'+email+'"]').removeClass('inactive').addClass('active');
+                    }
+                }
+            });
         },
 
         geoLocate: function(){
@@ -125,7 +163,7 @@
                         }
 
                         var html = '';
-                        html += '<li data-user="'+lName+'-'+fName+'" class="active">';
+                        html += '<li data-email="'+email+'" data-user="'+lName+'-'+fName+'" class="inactive">';
                         html += '  <span class="user"><img src="assets/images/office/'+office+'/'+lName+'-'+fName+'.jpg"></span>';
                         html += '  <div class="user-container">';
                         html += '      <div class="user-flex">';
@@ -171,6 +209,69 @@
         },
 
         events: function(){
+
+            var currentUser = Parse.User.current();
+            if (currentUser) {
+                $('.logout').show();
+                $('.user-login h2, .user-login-screen, .user-signup-screen').hide();
+            } else {
+                console.log('logged out. show login page');
+            }
+
+            $(document).on('click', '.user-login h2 a', function(e){
+                var type = $(this).data('login');
+
+                $('.screen').hide();
+                $('.user-'+type+'-screen').show();
+            });
+
+            $(document).on('click', '.logout-btn', function(e){
+                e.preventDefault();
+                Parse.User.logOut();
+                $('.user-login h2, .user-login-screen').show();
+            });
+
+            $(document).on('click', '.signup-btn', function(e){
+                e.preventDefault();
+
+                var user = new Parse.User();
+                var username = $('input.signup-username').val();
+                var password = $('input.signup-password').val();
+                var email = $('input.signup-email').val();
+
+                if(email.indexOf('@sapient.com') > -1){
+                    user.set('username', username);
+                    user.set('password', password);
+                    user.set('email', email);
+
+
+                    user.signUp(null, {
+                        success: function(user) {
+                            alert('signed up successfully');
+                        },
+                        error: function(user, error) {
+                        // Show the error message somewhere and let the user try again.
+                            alert('Error: ' + error.code + ' ' + error.message);
+                        }
+                    });
+                }
+            });
+
+            $(document).on('click', '.login-btn', function(e){
+                e.preventDefault();
+
+                var username = $('input.login-username').val();
+                var password = $('input.login-password').val();
+
+                Parse.User.logIn(username, password, {
+                    success: function(user) {
+                        alert('logged in successfully');
+                    },
+                    error: function(user, error) {
+                        // The login failed. Check error to see why.
+                    }
+                });
+            });
 
             // search functionality
             $(document).on('keyup keypress focus focusin focusout', '.search input', function () {
