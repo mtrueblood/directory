@@ -290,12 +290,18 @@
                     , password = $('input.login-password').val()
                     ;
 
+
                 Parse.User.logIn(username, password, {
                     success: function(user) {
-
-                        $('.logout').show();
-                        $('.user-login h2, .user-login-screen, .user-signup-screen').hide();
-                        location.reload();
+                        if(currentUser._serverData.emailVerified){
+                            $('.logout').show();
+                            $('.user-login h2, .user-login-screen, .user-signup-screen').hide();
+                            location.reload();
+                        } else {
+                            alert('An email asking you to verify your email address has been sent. Please verify before proceeding.');
+                            Parse.User.logOut();
+                            $('.user-login h2, .user-login-screen').show();
+                        }
                     },
                     error: function(user, error) {
                         // The login failed. Check error to see why.
