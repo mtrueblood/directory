@@ -70,10 +70,10 @@
             var polygon = map.drawPolygon({
                 paths: path, // pre-defined polygon shape
                 strokeColor: '#BBD8E9',
-                strokeOpacity: 1,
-                strokeWeight: 3,
+                strokeOpacity: 0,
+                strokeWeight: 0,
                 fillColor: '#BBD8E9',
-                fillOpacity: 0.6
+                fillOpacity: 0
             });
 
             var currentUser = Parse.User.current();
