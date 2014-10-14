@@ -142,6 +142,8 @@
 
         queryData: function(){
 
+            $('.directory ul, .checkin ul').empty();
+
             var UserData = Parse.Object.extend('directory')
                 , query = new Parse.Query(UserData)
                 , that = this
@@ -208,7 +210,10 @@
                             }
 
                         } else {
-                            $('.checkin ul').append(html);
+                            if(currentlyAt === cur_location){
+                                $('.checkin h3').hide();
+                                $('.checkin ul').append(html);
+                            }
                         }
 
                     }
