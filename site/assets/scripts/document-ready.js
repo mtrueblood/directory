@@ -18,6 +18,7 @@
 
     var directory = {
 
+        // Initialize app
         appInit: function(){
 
             $('.directory ul, .checkin ul').empty();
@@ -33,6 +34,7 @@
 
         },
 
+        // Office lat / longs
         getOffice: function(location, point){
             var offices = {};
 
@@ -51,6 +53,7 @@
 
         },
 
+        // Geofencing functionality
         showPosition: function(position){
 
             var userLatitude = position.coords.latitude
@@ -59,14 +62,15 @@
                 , officeLongitude = directory.getOffice(cur_location, 'longitude')
                 ;
 
+            // Create Google Map
             var map = new GMaps({
                 div: '#map',
                 lat: officeLatitude,
                 lng: officeLongitude
             });
 
-
-
+            // Create GeoFence
+            // path variable is saved in offices.js file
             var polygon = map.drawPolygon({
                 paths: path[cur_location], // pre-defined polygon shape
                 strokeColor: '#BBD8E9',
@@ -76,6 +80,7 @@
                 fillOpacity: 0
             });
 
+            // Add Office marker to map
             map.addMarker({
                 lat: officeLatitude,
                 lng: officeLongitude,
@@ -84,6 +89,7 @@
                 }
             });
 
+            // Detect if user is in Geofence
             var currentUser = Parse.User.current();
             if (currentUser) {
                 var email = currentUser.get('email');
@@ -99,6 +105,7 @@
 
         },
 
+        // Query Parse and update users location in / out of Geofence
         updateUserLocation: function(email, inFence){
 
             var UserStatus = Parse.Object.extend('directory')
@@ -131,6 +138,7 @@
             });
         },
 
+        // HTML5 Geolocation ... get users lat / long
         geoLocate: function(){
 
             var that = this;
@@ -140,6 +148,7 @@
             }
         },
 
+        // Grab data from parse (directory table) and render to directory / checkin div sections
         queryData: function(){
 
             $('.directory ul, .checkin ul').empty();
@@ -230,6 +239,8 @@
                 }
 
             }).then(function(){
+
+                // Lazy loading images
                 $('.directory, .checkin').find('img').unveil();
 
                 var didScroll = false;
@@ -253,6 +264,7 @@
 
             //console.log(currentUser._serverData.emailVerified)
 
+            // Onload show login or logout
             if (currentUser) {
                 $('.logout').show();
                 $('.user-login h2, .user-login-screen, .user-signup-screen').hide();
@@ -260,6 +272,7 @@
                 $('.user-login h2, .user-login-screen').show();
             }
 
+            // User login / sign up buttons
             $(document).on('click', '.user-login h2 a', function(e){
                 var type = $(this).data('login');
 
@@ -267,6 +280,7 @@
                 $('.user-'+type+'-screen').show();
             });
 
+            // Logout functionality
             $(document).on('click', '.logout-btn, .logout-icon', function(e){
                 e.preventDefault();
                 Parse.User.logOut();
@@ -274,6 +288,7 @@
                 location.reload();
             });
 
+            // Parse signup functionality
             $(document).on('click', '.signup-btn', function(e){
                 e.preventDefault();
 
@@ -302,6 +317,7 @@
                 }
             });
 
+            // Parse login functionality
             $(document).on('click', '.login-btn', function(e){
                 e.preventDefault();
 
