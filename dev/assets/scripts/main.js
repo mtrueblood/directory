@@ -147,6 +147,8 @@
                 , that = this
                 ;
 
+
+            //query.ascending('lName');
             query.ascending('lName');
             query.find({
 
@@ -161,7 +163,7 @@
                             , email = object.get('email')
                             , phone = object.get('phone')
                             , office = object.get('office')
-                            , currentlyAt = object.get('currently')
+                            , currentlyAt = object.get('currentlyAt')
                             , inOffice = ''
                             ;
 
@@ -198,7 +200,13 @@
                         html += '</li>';
 
                         if(cur_location === office){
-                            $('.directory ul').append(html);
+
+                            if(currentlyAt === cur_location){
+                                $('.directory ul.currently_here').append(html);
+                            } else {
+                                $('.directory ul.user_list').append(html);
+                            }
+
                         } else {
                             $('.checkin ul').append(html);
                         }

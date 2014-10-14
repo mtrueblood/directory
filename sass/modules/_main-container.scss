@@ -313,7 +313,7 @@
                         font-size: $font20;
                         position: absolute;
                         left: 23px;
-                        left: calc(100% - 52px);
+                        left: calc(100% - 57px);
                         @include bp(small) {
                             left: calc(100% - 30px);
                         }
