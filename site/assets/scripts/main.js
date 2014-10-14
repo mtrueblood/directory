@@ -76,6 +76,14 @@
                 fillOpacity: 0
             });
 
+            map.addMarker({
+                lat: officeLatitude,
+                lng: officeLongitude,
+                infoWindow: {
+                    content: '<p class="map-content">SapientNitro Detroit</p>'
+                }
+            });
+
             var currentUser = Parse.User.current();
             if (currentUser) {
                 var email = currentUser.get('email');
@@ -271,7 +279,10 @@
 
                 Parse.User.logIn(username, password, {
                     success: function(user) {
-                        alert('logged in successfully');
+
+                        $('.logout').show();
+                        $('.user-login h2, .user-login-screen, .user-signup-screen').hide();
+                        location.reload();
                     },
                     error: function(user, error) {
                         // The login failed. Check error to see why.
