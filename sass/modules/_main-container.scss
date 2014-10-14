@@ -9,6 +9,17 @@
         height: 40px;
     }
 
+    .logout-icon {
+        position: absolute;
+        top: 25px;
+        left: -126px;
+        z-index: 109;
+        display: block;
+        float: left;
+        color: white;
+        cursor: pointer;
+    }
+
     h1 {
         margin: 0;
         color: $dark-theme-primary-color;
@@ -40,13 +51,14 @@
             &.search {
                 display: none;
                 input {
-                    width: 90%;
-                    font-size: $font13;
+                    width: 73%;
+                    font-size: 1rem;
                     position: relative;
                     top: 14px;
                     padding: 5px;
                     text-align: center;
                     text-transform: uppercase;
+                    right: -24px;
                     &::-webkit-input-placeholder {
                        font-family: $fontDefault;
                        font-weight: 300;

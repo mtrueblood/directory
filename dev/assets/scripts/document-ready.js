@@ -2,6 +2,9 @@
 !function() {
     'use strict';
 
+    // Initialize Parse Application
+    Parse.initialize('uNtjzJdbGtEmC5n6ZoB3MkYbdlB23i5qeXejOT0O', 'N1wO2Ceogq6ZPld1F6J6N4I6q6P4K8UXgWmI1yyu');
+
     var w = window
         , d = document
         , e = d.documentElement
@@ -10,6 +13,7 @@
         , winHeight = w.innerHeight|| e.clientHeight|| g.clientHeight
         , landingContainer = '.landing'
         , cur_location = 'detroit'
+        , currentUser = Parse.User.current()
         ;
 
     var directory = {
@@ -17,10 +21,14 @@
         appInit: function(){
 
             $('.directory ul, .checkin ul').empty();
-            // Initialize Parse Application
-            Parse.initialize('uNtjzJdbGtEmC5n6ZoB3MkYbdlB23i5qeXejOT0O', 'N1wO2Ceogq6ZPld1F6J6N4I6q6P4K8UXgWmI1yyu');
-            this.queryData();
-            this.geoLocate();
+
+            if(currentUser){
+                this.queryData();
+                this.geoLocate();
+            }
+
+            this.events();
+
         },
 
         getOffice: function(location, point){
@@ -239,7 +247,8 @@
 
         events: function(){
 
-            var currentUser = Parse.User.current();
+
+            //console.log(currentUser._serverData.emailVerified)
 
             if (currentUser) {
                 $('.logout').show();
@@ -255,10 +264,11 @@
                 $('.user-'+type+'-screen').show();
             });
 
-            $(document).on('click', '.logout-btn', function(e){
+            $(document).on('click', '.logout-btn, .logout-icon', function(e){
                 e.preventDefault();
                 Parse.User.logOut();
                 $('.user-login h2, .user-login-screen').show();
+                location.reload();
             });
 
             $(document).on('click', '.signup-btn', function(e){
@@ -297,15 +307,9 @@
 
                 Parse.User.logIn(username, password, {
                     success: function(user) {
-                        if(currentUser._serverData.emailVerified){
-                            $('.logout').show();
-                            $('.user-login h2, .user-login-screen, .user-signup-screen').hide();
-                            location.reload();
-                        } else {
-                            alert('An email asking you to verify your email address has been sent. Please verify before proceeding.');
-                            Parse.User.logOut();
-                            $('.user-login h2, .user-login-screen').show();
-                        }
+                        $('.logout').show();
+                        $('.user-login h2, .user-login-screen, .user-signup-screen').hide();
+                        location.reload();
                     },
                     error: function(user, error) {
                         // The login failed. Check error to see why.
@@ -323,43 +327,45 @@
 
             // Footer Nav Menu
             [].forEach.call(document.querySelectorAll('nav a'), function(el) {
-                el.addEventListener('click', function(e) {
+                if(currentUser){
+                    el.addEventListener('click', function(e) {
 
-                    e.preventDefault();
+                        e.preventDefault();
 
-                    var that = this
-                        , dataAtt = that.getAttribute('data-section')
-                        , section = '.' + dataAtt
-                        , heading = document.querySelector('h1').style
-                        , allSections = document.querySelector('.' + dataAtt).style
-                        , search = document.querySelector('.search').style
-                        , welcome = document.querySelector('.welcome').style
-                        ;
+                        var that = this
+                            , dataAtt = that.getAttribute('data-section')
+                            , section = '.' + dataAtt
+                            , heading = document.querySelector('h1').style
+                            , allSections = document.querySelector('.' + dataAtt).style
+                            , search = document.querySelector('.search').style
+                            , welcome = document.querySelector('.welcome').style
+                            ;
 
-                    $('nav a').removeClass('open');
-                    $(that).addClass('open');
+                        $('nav a').removeClass('open');
+                        $(that).addClass('open');
 
-                    if(dataAtt === 'directory' || dataAtt === 'checkin'){
+                        if(dataAtt === 'directory' || dataAtt === 'checkin'){
 
-                        document.querySelector(landingContainer).style.display = 'none';
-                        heading.height = '139px';
-                        allSections.top = '139px';
-                        allSections.height = '56%';
-                        allSections.zIndex = '101';
-                        search.display = 'inline';
-                        welcome.display = 'none';
-                    } else {
+                            document.querySelector(landingContainer).style.display = 'none';
+                            heading.height = '139px';
+                            allSections.top = '139px';
+                            allSections.height = '56%';
+                            allSections.zIndex = '101';
+                            search.display = 'inline';
+                            welcome.display = 'none';
+                        } else {
 
-                        heading.height = '90px';
-                        $('.section').css({'top' : '90px', 'height' : '66%'});
-                    }
+                            heading.height = '90px';
+                            $('.section').css({'top' : '90px', 'height' : '66%'});
+                        }
 
-                    $('.section').animate({left: '-'+ winWidth +'px'}, 200).promise().done(function(){
+                        $('.section').animate({left: '-'+ winWidth +'px'}, 200).promise().done(function(){
 
-                        $(section).animate({left: '0px'}, 200);
+                            $(section).animate({left: '0px'}, 200);
+                        });
+
                     });
-
-                });
+                }
             });
 
             // Icon click to show more info overlay
