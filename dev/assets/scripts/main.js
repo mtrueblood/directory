@@ -215,7 +215,7 @@
                 $('.logout').show();
                 $('.user-login h2, .user-login-screen, .user-signup-screen').hide();
             } else {
-                console.log('logged out. show login page');
+                $('.user-login h2, .user-login-screen').show();
             }
 
             $(document).on('click', '.user-login h2 a', function(e){
