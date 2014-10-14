@@ -12,7 +12,7 @@
     .logout-icon {
         position: absolute;
         top: 25px;
-        left: -126px;
+        left: -18px;
         z-index: 109;
         display: block;
         float: left;
@@ -36,7 +36,7 @@
             z-index: 105;
         }
         overflow: hidden;
-        span {
+        span:not(:first-of-type) {
             display: inline-block;
             font-size: $font26;
             position: relative;

@@ -2719,7 +2719,7 @@ body {
 .main-container .logout-icon {
   position: absolute;
   top: 25px;
-  left: -126px;
+  left: -18px;
   z-index: 109;
   display: block;
   float: left;
@@ -2749,7 +2749,7 @@ body {
   }
 }
 /* line 39, ../../../sass/modules/_main-container.scss */
-.main-container h1 span {
+.main-container h1 span:not(:first-of-type) {
   display: inline-block;
   font-size: 2rem;
   position: relative;
@@ -2759,16 +2759,16 @@ body {
   width: 100%;
 }
 /* line 47, ../../../sass/modules/_main-container.scss */
-.main-container h1 span.welcome {
+.main-container h1 span:not(:first-of-type).welcome {
   top: 18px;
   font-weight: 300;
 }
 /* line 51, ../../../sass/modules/_main-container.scss */
-.main-container h1 span.search {
+.main-container h1 span:not(:first-of-type).search {
   display: none;
 }
 /* line 53, ../../../sass/modules/_main-container.scss */
-.main-container h1 span.search input {
+.main-container h1 span:not(:first-of-type).search input {
   width: 73%;
   font-size: 1rem;
   position: relative;
@@ -2779,24 +2779,24 @@ body {
   right: -24px;
 }
 /* line 62, ../../../sass/modules/_main-container.scss */
-.main-container h1 span.search input::-webkit-input-placeholder {
+.main-container h1 span:not(:first-of-type).search input::-webkit-input-placeholder {
   font-family: "Lato", sans-serif;
   font-weight: 300;
 }
 /* line 67, ../../../sass/modules/_main-container.scss */
-.main-container h1 span.search input:-moz-placeholder {
+.main-container h1 span:not(:first-of-type).search input:-moz-placeholder {
   /* Firefox 18- */
   font-family: "Lato", sans-serif;
   font-weight: 300;
 }
 /* line 72, ../../../sass/modules/_main-container.scss */
-.main-container h1 span.search input::-moz-placeholder {
+.main-container h1 span:not(:first-of-type).search input::-moz-placeholder {
   /* Firefox 19+ */
   font-family: "Lato", sans-serif;
   font-weight: 300;
 }
 /* line 77, ../../../sass/modules/_main-container.scss */
-.main-container h1 span.search input:-ms-input-placeholder {
+.main-container h1 span:not(:first-of-type).search input:-ms-input-placeholder {
   font-family: "Lato", sans-serif;
   font-weight: 300;
 }

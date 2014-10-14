@@ -29,6 +29,8 @@
 
             this.events();
 
+            $('h1 span.office-location').html(cur_location.toUpperCase());
+
         },
 
         getOffice: function(location, point){
@@ -38,6 +40,10 @@
                 'detroit' : {
                     'latitude' : '42.546897',
                     'longitude' : '-83.214471'
+                },
+                'chicago' : {
+                    'latitude' : '41.881596',
+                    'longitude' : '-87.627710'
                 }
             };
 
@@ -59,24 +65,10 @@
                 lng: officeLongitude
             });
 
-            var path = [
-                [42.547334,-83.215245],
-                [42.547540,-83.214773],
-                [42.547208,-83.214515],
-                [42.547018,-83.214955],
-                [42.547334,-83.215224]
-            ];
-            /*
-            var path = [
-                [42.488349,-83.119597],
-                [42.488349,-83.118439],
-                [42.487606,-83.118396],
-                [42.487606,-83.119533],
-                [42.488326,-83.119608]
-            ];*/
+
 
             var polygon = map.drawPolygon({
-                paths: path, // pre-defined polygon shape
+                paths: path[cur_location], // pre-defined polygon shape
                 strokeColor: '#BBD8E9',
                 strokeOpacity: 0,
                 strokeWeight: 0,
@@ -88,7 +80,7 @@
                 lat: officeLatitude,
                 lng: officeLongitude,
                 infoWindow: {
-                    content: '<p class="map-content">SapientNitro Detroit</p>'
+                    content: '<p class="map-content">SapientNitro '+cur_location.toString().toUpperCase()+'</p>'
                 }
             });
 
@@ -157,8 +149,6 @@
                 , that = this
                 ;
 
-
-            //query.ascending('lName');
             query.ascending('lName');
             query.find({
 
@@ -247,7 +237,6 @@
 
         events: function(){
 
-
             //console.log(currentUser._serverData.emailVerified)
 
             if (currentUser) {
@@ -306,7 +295,6 @@
                     , password = $('input.login-password').val()
                     ;
 
-
                 Parse.User.logIn(username, password, {
                     success: function(user) {
                         $('.logout').show();
@@ -314,7 +302,7 @@
                         location.reload();
                     },
                     error: function(user, error) {
-                        // The login failed. Check error to see why.
+                        alert('Error: ' + error.code + ' ' + error.message);
                     }
                 });
             });
