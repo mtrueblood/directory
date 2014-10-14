@@ -2,7 +2,7 @@
 
   $bp-small: "(min-width: 360px)";
   $bp-wide: "(min-width: 1250px)";
-  $bp-large: "(min-width: 1600px)";
+  $bp-large: "(min-width: 1300px)";
 
   @if $point == small {
     @media #{$bp-small} { @content; }

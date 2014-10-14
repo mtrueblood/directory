@@ -359,9 +359,89 @@
         }
     }
 
+    .checkin h2 {
+        display: none;
+    }
+
     .info {
         #map {
             height: 100%;
+        }
+    }
+
+
+
+}
+
+@include bp(large) {
+    .landing,
+    .footer,
+    .directory {
+        display: none !important;
+    }
+
+    .checkin {
+        display: block !important;
+        position: absolute;
+        left: 0 !important;
+        top: 91px !important;
+        width: 100% !important;
+        height: 100% !important;
+        background-color: black !important;
+        .user-container {
+
+        }
+        ul li {
+            width: 100% !important;
+            cursor: none !important;
+            &:hover {
+                background-color: #262626 !important;
+            }
+        }
+
+        .user-flex {
+            width: 100% !important;
+        }
+
+        .user-info {
+            width: 100% !important;
+        }
+
+        .user-container {
+            overflow: inherit !important;
+        }
+
+        span.user {
+            width: 20% !important;
+            height: auto !important;
+            overflow: auto !important;
+            float: left !important;
+        }
+        span.user img {
+            width: 100% !important;
+            height: 50% !important;
+            overflow: inherit !important;
+        }
+        .name {
+            font-size: 3rem !important;
+            text-overflow: none !important;
+            max-width: 100% !important;
+            width: 100% !important;
+        }
+        .title {
+            font-size: 2.8rem !important;
+            max-width: 100% !important;
+            width: 100% !important;
+        }
+        .user-info-icon {
+            display: none !important;
+        }
+
+        h2 {
+            display: block !important;
+            font-size: 4rem;
+            color: white;
+            text-transform: uppercase;
         }
     }
 }
