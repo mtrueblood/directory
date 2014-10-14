@@ -167,6 +167,7 @@
                             , office = object.get('office')
                             , currentlyAt = object.get('currentlyAt')
                             , inOffice = ''
+                            , active = 'inactive'
                             ;
 
                         if(phone !== 'n/a'){
@@ -177,8 +178,12 @@
                             inOffice = '<br>' + office;
                         }
 
+                        if(currentlyAt === cur_location){
+                            active = 'active';
+                        }
+
                         var html = '';
-                        html += '<li data-email="'+email+'" data-user="'+lName+'-'+fName+'" class="inactive">';
+                        html += '<li data-email="'+email+'" data-user="'+lName+'-'+fName+'" class="'+active+'">';
                         html += '  <span class="user"><img src="assets/images/office/'+office+'/'+lName+'-'+fName+'.jpg"></span>';
                         html += '  <div class="user-container">';
                         html += '      <div class="user-flex">';
@@ -269,7 +274,6 @@
                     user.set('username', username);
                     user.set('password', password);
                     user.set('email', email);
-
 
                     user.signUp(null, {
                         success: function(user) {
