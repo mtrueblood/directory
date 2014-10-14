@@ -294,6 +294,8 @@
                             alert('Error: ' + error.code + ' ' + error.message);
                         }
                     });
+                } else {
+                    alert('You must have a valid Sapient email address to register');
                 }
             });
 
