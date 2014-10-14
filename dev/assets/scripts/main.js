@@ -182,7 +182,7 @@
 
                         var html = '';
                         html += '<li data-email="'+email+'" data-user="'+lName+'-'+fName+'" class="'+active+'">';
-                        html += '  <span class="user"><img src="assets/images/office/'+office+'/'+lName+'-'+fName+'.jpg"></span>';
+                        html += '  <span class="user"><img src="assets/images/transparent.png" data-src="assets/images/office/'+office+'/'+lName+'-'+fName+'.jpg"></span>';
                         html += '  <div class="user-container">';
                         html += '      <div class="user-flex">';
                         html += '          <div class="user-info user-default '+currentlyAt+'">';
@@ -230,6 +230,20 @@
                 }
 
             }).then(function(){
+                $('.directory, .checkin').find('img').unveil();
+
+                var didScroll = false;
+
+                $('.section').scroll(function() {
+                    didScroll = true;
+                });
+
+                setInterval(function() {
+                    if ( didScroll ) {
+                        didScroll = false;
+                        $('.directory, .checkin').find('img').unveil();
+                    }
+                }, 250);
 
                 that.events();
             });
