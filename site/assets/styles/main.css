@@ -3173,7 +3173,7 @@ body {
   position: relative;
   padding-top: 78px;
   text-align: center;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.8);
 }
 /* line 9, ../../../sass/modules/_login.scss */
 .user-login h2 {
@@ -3195,12 +3195,15 @@ body {
 /* line 25, ../../../sass/modules/_login.scss */
 .user-login input {
   padding: 10px;
-  margin-bottom: 5px;
+  width: 40%;
+  clear: both;
+  display: block;
+  margin: 5px auto;
 }
-/* line 30, ../../../sass/modules/_login.scss */
+/* line 33, ../../../sass/modules/_login.scss */
 .user-login input[type='submit'] {
   clear: both;
-  width: 200px;
+  width: 48%;
   margin: 0 auto;
   padding: 10px;
   background-color: #333;
@@ -3210,17 +3213,17 @@ body {
   text-transform: uppercase;
   font-family: "Lato", sans-serif;
 }
-/* line 44, ../../../sass/modules/_login.scss */
+/* line 47, ../../../sass/modules/_login.scss */
 .user-login .user-signup-screen,
 .user-login .user-login-screen {
   display: none;
 }
-/* line 48, ../../../sass/modules/_login.scss */
+/* line 51, ../../../sass/modules/_login.scss */
 .user-login .logout {
-  padding-top: 100px;
+  padding-top: 69px;
   display: none;
 }
-/* line 50, ../../../sass/modules/_login.scss */
+/* line 53, ../../../sass/modules/_login.scss */
 .user-login .logout h3 {
   font-size: 1.538rem;
   color: white;

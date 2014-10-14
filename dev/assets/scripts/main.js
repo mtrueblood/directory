@@ -92,13 +92,18 @@
         },
 
         updateUserLocation: function(email, inFence){
-            var UserStatus = Parse.Object.extend('directory');
-            var query = new Parse.Query(UserStatus);
+
+            var UserStatus = Parse.Object.extend('directory')
+                , query = new Parse.Query(UserStatus)
+                , location = cur_location
+                ;
+
             query.equalTo('email', email);
-            var location = cur_location;
+
             if(inFence !== true){
                 location = '';
             }
+
             query.first({
                 success: function (Contact) {
                     Contact.save(null, {
@@ -156,8 +161,6 @@
                             phone = phone.substr(0, 3) + '-' + phone.substr(3, 3) + '-' + phone.substr(6,4);
                         }
 
-
-
                         if(cur_location !== office){
                             inOffice = '<br>' + office;
                         }
@@ -211,6 +214,7 @@
         events: function(){
 
             var currentUser = Parse.User.current();
+
             if (currentUser) {
                 $('.logout').show();
                 $('.user-login h2, .user-login-screen, .user-signup-screen').hide();
@@ -234,10 +238,11 @@
             $(document).on('click', '.signup-btn', function(e){
                 e.preventDefault();
 
-                var user = new Parse.User();
-                var username = $('input.signup-username').val();
-                var password = $('input.signup-password').val();
-                var email = $('input.signup-email').val();
+                var user = new Parse.User()
+                    , username = $('input.signup-username').val()
+                    , password = $('input.signup-password').val()
+                    , email = $('input.signup-email').val()
+                    ;
 
                 if(email.indexOf('@sapient.com') > -1){
                     user.set('username', username);
@@ -260,8 +265,9 @@
             $(document).on('click', '.login-btn', function(e){
                 e.preventDefault();
 
-                var username = $('input.login-username').val();
-                var password = $('input.login-password').val();
+                var username = $('input.login-username').val()
+                    , password = $('input.login-password').val()
+                    ;
 
                 Parse.User.logIn(username, password, {
                     success: function(user) {
