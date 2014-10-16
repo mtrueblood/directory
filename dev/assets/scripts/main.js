@@ -70,8 +70,6 @@
                 break;
             }
 
-
-
             return baseCity;
         },
 
