@@ -65,7 +65,12 @@
             case 'west bloomfield':
                 baseCity = 'detroit';
                 break;
+            case 'chicago':
+                baseCity = 'chicago';
+                break;
             }
+
+
 
             return baseCity;
         },
