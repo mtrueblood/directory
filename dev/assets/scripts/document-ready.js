@@ -12,9 +12,10 @@
         , winWidth = w.innerWidth || e.clientWidth || g.clientWidth
         , winHeight = w.innerHeight|| e.clientHeight|| g.clientHeight
         , landingContainer = '.landing'
-        , cur_location = 'detroit'
         , currentUser = Parse.User.current()
         ;
+
+    window.cur_location = 'detroit';
 
     var directory = {
 
@@ -30,7 +31,7 @@
 
             this.events();
 
-            $('h1 span.office-location').html(cur_location.toUpperCase());
+
 
         },
 
@@ -49,8 +50,24 @@
                 }
             };
 
-            return offices[cur_location][point];
+            return offices[window.cur_location][point];
 
+        },
+
+        getCityName: function(city){
+            var baseCity = city;
+            switch(city){
+            case 'birmingham':
+            case 'royal oak':
+            case 'ferndal':
+            case 'detroit':
+            case 'bloomfield hills':
+            case 'west bloomfield':
+                baseCity = 'detroit';
+                break;
+            }
+
+            return baseCity;
         },
 
         // Geofencing functionality
@@ -58,9 +75,15 @@
 
             var userLatitude = position.coords.latitude
                 , userLongitude = position.coords.longitude
-                , officeLatitude = directory.getOffice(cur_location, 'latitude')
-                , officeLongitude = directory.getOffice(cur_location, 'longitude')
+                , officeLatitude = directory.getOffice(window.cur_location, 'latitude')
+                , officeLongitude = directory.getOffice(window.cur_location, 'longitude')
                 ;
+
+            $.getJSON('http://maps.googleapis.com/maps/api/geocode/json?latlng='+officeLatitude+','+officeLongitude+'&sensor=true', function(data){
+                var city = data.results[0].address_components[2].short_name.toLowerCase();
+                window.cur_location = directory.getCityName(city);
+                $('h1 span.office-location').html(window.cur_location.toUpperCase());
+            });
 
             // Create Google Map
             var map = new GMaps({
@@ -72,7 +95,7 @@
             // Create GeoFence
             // path variable is saved in offices.js file
             var polygon = map.drawPolygon({
-                paths: path[cur_location], // pre-defined polygon shape
+                paths: path[window.cur_location], // pre-defined polygon shape
                 strokeColor: '#BBD8E9',
                 strokeOpacity: 0,
                 strokeWeight: 0,
@@ -85,7 +108,7 @@
                 lat: officeLatitude,
                 lng: officeLongitude,
                 infoWindow: {
-                    content: '<p class="map-content">SapientNitro '+cur_location.toString().toUpperCase()+'</p>'
+                    content: '<p class="map-content">SapientNitro '+window.cur_location.toString().toUpperCase()+'</p>'
                 }
             });
 
@@ -110,7 +133,7 @@
 
             var UserStatus = Parse.Object.extend('directory')
                 , query = new Parse.Query(UserStatus)
-                , location = cur_location
+                , location = window.cur_location
                 ;
 
             query.equalTo('email', email);
@@ -181,11 +204,11 @@
                             phone = phone.substr(0, 3) + '-' + phone.substr(3, 3) + '-' + phone.substr(6,4);
                         }
 
-                        if(cur_location !== office){
+                        if(window.cur_location !== office){
                             inOffice = '<br>' + office;
                         }
 
-                        if(currentlyAt === cur_location){
+                        if(currentlyAt === window.cur_location){
                             active = 'active';
                         }
 
@@ -213,16 +236,16 @@
                         html += '  </div>';
                         html += '</li>';
 
-                        if(cur_location === office){
+                        if(window.cur_location === office){
 
-                            if(currentlyAt === cur_location){
+                            if(currentlyAt === window.cur_location){
                                 $('.directory ul.currently_here').append(html);
                             } else {
                                 $('.directory ul.user_list').append(html);
                             }
 
                         } else {
-                            if(currentlyAt === cur_location){
+                            if(currentlyAt === window.cur_location){
                                 $('.checkin h3').hide();
                                 $('.checkin ul').append(html);
                             }

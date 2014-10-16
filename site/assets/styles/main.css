@@ -2780,9 +2780,13 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 90px;
+  min-height: 90px;
   z-index: 1;
   overflow: hidden;
+}
+/* line 36, ../../../sass/modules/_main-container.scss */
+.main-container h1 .office-location {
+  min-height: 89px;
 }
 @media (min-width: 360px) {
   /* line 23, ../../../sass/modules/_main-container.scss */
@@ -2790,7 +2794,7 @@ body {
     z-index: 105;
   }
 }
-/* line 39, ../../../sass/modules/_main-container.scss */
+/* line 44, ../../../sass/modules/_main-container.scss */
 .main-container h1 span:not(:first-of-type) {
   display: inline-block;
   font-size: 2rem;
@@ -2800,16 +2804,17 @@ body {
   clear: both;
   width: 100%;
 }
-/* line 47, ../../../sass/modules/_main-container.scss */
+/* line 52, ../../../sass/modules/_main-container.scss */
 .main-container h1 span:not(:first-of-type).welcome {
   top: 18px;
   font-weight: 300;
+  display: none;
 }
-/* line 51, ../../../sass/modules/_main-container.scss */
+/* line 57, ../../../sass/modules/_main-container.scss */
 .main-container h1 span:not(:first-of-type).search {
   display: none;
 }
-/* line 53, ../../../sass/modules/_main-container.scss */
+/* line 59, ../../../sass/modules/_main-container.scss */
 .main-container h1 span:not(:first-of-type).search input {
   width: 73%;
   font-size: 1rem;
@@ -2820,29 +2825,29 @@ body {
   text-transform: uppercase;
   right: -24px;
 }
-/* line 62, ../../../sass/modules/_main-container.scss */
+/* line 68, ../../../sass/modules/_main-container.scss */
 .main-container h1 span:not(:first-of-type).search input::-webkit-input-placeholder {
   font-family: "Lato", sans-serif;
   font-weight: 300;
 }
-/* line 67, ../../../sass/modules/_main-container.scss */
+/* line 73, ../../../sass/modules/_main-container.scss */
 .main-container h1 span:not(:first-of-type).search input:-moz-placeholder {
   /* Firefox 18- */
   font-family: "Lato", sans-serif;
   font-weight: 300;
 }
-/* line 72, ../../../sass/modules/_main-container.scss */
+/* line 78, ../../../sass/modules/_main-container.scss */
 .main-container h1 span:not(:first-of-type).search input::-moz-placeholder {
   /* Firefox 19+ */
   font-family: "Lato", sans-serif;
   font-weight: 300;
 }
-/* line 77, ../../../sass/modules/_main-container.scss */
+/* line 83, ../../../sass/modules/_main-container.scss */
 .main-container h1 span:not(:first-of-type).search input:-ms-input-placeholder {
   font-family: "Lato", sans-serif;
   font-weight: 300;
 }
-/* line 86, ../../../sass/modules/_main-container.scss */
+/* line 92, ../../../sass/modules/_main-container.scss */
 .main-container .landing {
   width: 100%;
   height: 100%;
@@ -2852,7 +2857,7 @@ body {
   z-index: 0;
   background: transparent url(../../assets/images/sapient-logo.png) center 35% no-repeat;
 }
-/* line 96, ../../../sass/modules/_main-container.scss */
+/* line 102, ../../../sass/modules/_main-container.scss */
 .main-container .section {
   width: 100%;
   height: 72.2%;
@@ -2865,7 +2870,7 @@ body {
   /* has to be scroll, not auto */
   -webkit-overflow-scrolling: touch;
 }
-/* line 109, ../../../sass/modules/_main-container.scss */
+/* line 115, ../../../sass/modules/_main-container.scss */
 .main-container .checkin,
 .main-container .directory {
   height: 56%;
@@ -2873,13 +2878,13 @@ body {
   background-color: white;
   background-color: white;
 }
-/* line 114, ../../../sass/modules/_main-container.scss */
+/* line 120, ../../../sass/modules/_main-container.scss */
 .main-container .checkin ul,
 .main-container .directory ul {
   margin: 0;
   padding: 0 0 0px 0;
 }
-/* line 117, ../../../sass/modules/_main-container.scss */
+/* line 123, ../../../sass/modules/_main-container.scss */
 .main-container .checkin ul li,
 .main-container .directory ul li {
   list-style: none;
@@ -2891,69 +2896,69 @@ body {
   cursor: pointer;
   position: relative;
 }
-/* line 127, ../../../sass/modules/_main-container.scss */
+/* line 133, ../../../sass/modules/_main-container.scss */
 .main-container .checkin ul li.active,
 .main-container .directory ul li.active {
   background-color: #262626;
   color: #fff;
 }
-/* line 130, ../../../sass/modules/_main-container.scss */
+/* line 136, ../../../sass/modules/_main-container.scss */
 .main-container .checkin ul li.active .user,
 .main-container .directory ul li.active .user {
   border-right: 10px solid #34b934;
 }
-/* line 135, ../../../sass/modules/_main-container.scss */
+/* line 141, ../../../sass/modules/_main-container.scss */
 .main-container .checkin ul li.inactive,
 .main-container .directory ul li.inactive {
   background-color: #262626;
   color: #fff;
 }
-/* line 138, ../../../sass/modules/_main-container.scss */
+/* line 144, ../../../sass/modules/_main-container.scss */
 .main-container .checkin ul li.inactive .user,
 .main-container .directory ul li.inactive .user {
   border-right: 10px solid #ff0000;
 }
-/* line 143, ../../../sass/modules/_main-container.scss */
+/* line 149, ../../../sass/modules/_main-container.scss */
 .main-container .checkin ul li.not-home,
 .main-container .directory ul li.not-home {
   background-color: #eeeeee;
   color: #000;
 }
-/* line 146, ../../../sass/modules/_main-container.scss */
+/* line 152, ../../../sass/modules/_main-container.scss */
 .main-container .checkin ul li.not-home .user,
 .main-container .directory ul li.not-home .user {
   border-right: 10px solid #34b934;
 }
-/* line 150, ../../../sass/modules/_main-container.scss */
+/* line 156, ../../../sass/modules/_main-container.scss */
 .main-container .checkin ul li.not-home:hover,
 .main-container .directory ul li.not-home:hover {
   background-color: #393939;
   color: #fff;
 }
-/* line 156, ../../../sass/modules/_main-container.scss */
+/* line 162, ../../../sass/modules/_main-container.scss */
 .main-container .checkin ul li:hover,
 .main-container .directory ul li:hover {
   background-color: #393939;
   color: #fff;
 }
-/* line 161, ../../../sass/modules/_main-container.scss */
+/* line 167, ../../../sass/modules/_main-container.scss */
 .main-container .checkin ul li .user-container,
 .main-container .directory ul li .user-container {
   overflow: hidden;
   width: 66%;
   float: left;
 }
-/* line 166, ../../../sass/modules/_main-container.scss */
+/* line 172, ../../../sass/modules/_main-container.scss */
 .main-container .checkin ul li .user-container .user-flex,
 .main-container .directory ul li .user-container .user-flex {
   width: 466px;
 }
-/* line 169, ../../../sass/modules/_main-container.scss */
+/* line 175, ../../../sass/modules/_main-container.scss */
 .main-container .checkin ul li .user-container .user-flex .user-default,
 .main-container .directory ul li .user-container .user-flex .user-default {
   position: relative;
 }
-/* line 173, ../../../sass/modules/_main-container.scss */
+/* line 179, ../../../sass/modules/_main-container.scss */
 .main-container .checkin ul li .user-container .user-flex .user-details,
 .main-container .directory ul li .user-container .user-flex .user-details {
   height: 600px;
@@ -2967,37 +2972,37 @@ body {
   background-size: cover;
 }
 @media (min-width: 360px) {
-  /* line 173, ../../../sass/modules/_main-container.scss */
+  /* line 179, ../../../sass/modules/_main-container.scss */
   .main-container .checkin ul li .user-container .user-flex .user-details,
   .main-container .directory ul li .user-container .user-flex .user-details {
     height: 449px;
     top: 139px;
   }
 }
-/* line 189, ../../../sass/modules/_main-container.scss */
+/* line 195, ../../../sass/modules/_main-container.scss */
 .main-container .checkin ul li .user-container .user-flex .user-details a,
 .main-container .directory ul li .user-container .user-flex .user-details a {
   color: #fff;
   text-decoration: none;
 }
-/* line 194, ../../../sass/modules/_main-container.scss */
+/* line 200, ../../../sass/modules/_main-container.scss */
 .main-container .checkin ul li .user-container .user-flex .user-details i,
 .main-container .directory ul li .user-container .user-flex .user-details i {
   margin-right: 10px;
   position: relative;
   top: 2px;
 }
-/* line 200, ../../../sass/modules/_main-container.scss */
+/* line 206, ../../../sass/modules/_main-container.scss */
 .main-container .checkin ul li .user-container .user-flex .user-details i.icon-close,
 .main-container .directory ul li .user-container .user-flex .user-details i.icon-close {
   top: -10px;
 }
-/* line 204, ../../../sass/modules/_main-container.scss */
+/* line 210, ../../../sass/modules/_main-container.scss */
 .main-container .checkin ul li .user-container .user-flex .user-details span,
 .main-container .directory ul li .user-container .user-flex .user-details span {
   text-shadow: 0px 0px 8px #969696;
 }
-/* line 208, ../../../sass/modules/_main-container.scss */
+/* line 214, ../../../sass/modules/_main-container.scss */
 .main-container .checkin ul li .user-container .user-flex .user-details .name,
 .main-container .directory ul li .user-container .user-flex .user-details .name {
   position: fixed;
@@ -3010,13 +3015,13 @@ body {
   width: 300px;
 }
 @media (min-width: 360px) {
-  /* line 208, ../../../sass/modules/_main-container.scss */
+  /* line 214, ../../../sass/modules/_main-container.scss */
   .main-container .checkin ul li .user-container .user-flex .user-details .name,
   .main-container .directory ul li .user-container .user-flex .user-details .name {
     top: 436px;
   }
 }
-/* line 222, ../../../sass/modules/_main-container.scss */
+/* line 228, ../../../sass/modules/_main-container.scss */
 .main-container .checkin ul li .user-container .user-flex .user-details .title,
 .main-container .directory ul li .user-container .user-flex .user-details .title {
   position: fixed;
@@ -3030,13 +3035,13 @@ body {
   font-weight: 500;
 }
 @media (min-width: 360px) {
-  /* line 222, ../../../sass/modules/_main-container.scss */
+  /* line 228, ../../../sass/modules/_main-container.scss */
   .main-container .checkin ul li .user-container .user-flex .user-details .title,
   .main-container .directory ul li .user-container .user-flex .user-details .title {
     top: 478px;
   }
 }
-/* line 237, ../../../sass/modules/_main-container.scss */
+/* line 243, ../../../sass/modules/_main-container.scss */
 .main-container .checkin ul li .user-container .user-flex .user-details .phone,
 .main-container .directory ul li .user-container .user-flex .user-details .phone {
   position: fixed;
@@ -3047,13 +3052,13 @@ body {
   max-width: 300px;
 }
 @media (min-width: 360px) {
-  /* line 237, ../../../sass/modules/_main-container.scss */
+  /* line 243, ../../../sass/modules/_main-container.scss */
   .main-container .checkin ul li .user-container .user-flex .user-details .phone,
   .main-container .directory ul li .user-container .user-flex .user-details .phone {
     top: 553px;
   }
 }
-/* line 249, ../../../sass/modules/_main-container.scss */
+/* line 255, ../../../sass/modules/_main-container.scss */
 .main-container .checkin ul li .user-container .user-flex .user-details .email,
 .main-container .directory ul li .user-container .user-flex .user-details .email {
   position: fixed;
@@ -3064,26 +3069,26 @@ body {
   max-width: 300px;
 }
 @media (min-width: 360px) {
-  /* line 249, ../../../sass/modules/_main-container.scss */
+  /* line 255, ../../../sass/modules/_main-container.scss */
   .main-container .checkin ul li .user-container .user-flex .user-details .email,
   .main-container .directory ul li .user-container .user-flex .user-details .email {
     top: 514px;
   }
 }
-/* line 266, ../../../sass/modules/_main-container.scss */
+/* line 272, ../../../sass/modules/_main-container.scss */
 .main-container .checkin ul li .user-info,
 .main-container .directory ul li .user-info {
   float: left;
   width: 233px;
   height: 77px;
 }
-/* line 272, ../../../sass/modules/_main-container.scss */
+/* line 278, ../../../sass/modules/_main-container.scss */
 .main-container .checkin ul li span,
 .main-container .directory ul li span {
   display: inline-block;
   text-align: left;
 }
-/* line 276, ../../../sass/modules/_main-container.scss */
+/* line 282, ../../../sass/modules/_main-container.scss */
 .main-container .checkin ul li span.user,
 .main-container .directory ul li span.user {
   float: left;
@@ -3091,7 +3096,7 @@ body {
   height: 77px;
   overflow: hidden;
 }
-/* line 282, ../../../sass/modules/_main-container.scss */
+/* line 288, ../../../sass/modules/_main-container.scss */
 .main-container .checkin ul li span.user img,
 .main-container .directory ul li span.user img {
   width: auto;
@@ -3099,7 +3104,7 @@ body {
   position: relative;
   left: -10px;
 }
-/* line 290, ../../../sass/modules/_main-container.scss */
+/* line 296, ../../../sass/modules/_main-container.scss */
 .main-container .checkin ul li span.title,
 .main-container .directory ul li span.title {
   width: 66%;
@@ -3111,7 +3116,7 @@ body {
   text-transform: capitalize;
   height: 31px;
 }
-/* line 300, ../../../sass/modules/_main-container.scss */
+/* line 306, ../../../sass/modules/_main-container.scss */
 .main-container .checkin ul li span.name,
 .main-container .directory ul li span.name {
   width: 66%;
@@ -3126,7 +3131,7 @@ body {
   font-size: 1rem;
   text-transform: uppercase;
 }
-/* line 313, ../../../sass/modules/_main-container.scss */
+/* line 319, ../../../sass/modules/_main-container.scss */
 .main-container .checkin ul li span.close,
 .main-container .directory ul li span.close {
   font-size: 1.538rem;
@@ -3137,13 +3142,13 @@ body {
   cursor: pointer;
 }
 @media (min-width: 360px) {
-  /* line 313, ../../../sass/modules/_main-container.scss */
+  /* line 319, ../../../sass/modules/_main-container.scss */
   .main-container .checkin ul li span.close,
   .main-container .directory ul li span.close {
     left: 485px;
   }
 }
-/* line 324, ../../../sass/modules/_main-container.scss */
+/* line 330, ../../../sass/modules/_main-container.scss */
 .main-container .checkin ul li span.user-info-icon,
 .main-container .directory ul li span.user-info-icon {
   font-size: 1.538rem;
@@ -3155,13 +3160,13 @@ body {
   cursor: pointer;
 }
 @media (min-width: 360px) {
-  /* line 324, ../../../sass/modules/_main-container.scss */
+  /* line 330, ../../../sass/modules/_main-container.scss */
   .main-container .checkin ul li span.user-info-icon,
   .main-container .directory ul li span.user-info-icon {
     left: calc(100% - 30px);
   }
 }
-/* line 341, ../../../sass/modules/_main-container.scss */
+/* line 347, ../../../sass/modules/_main-container.scss */
 .main-container .checkin ul li span.office, .main-container .checkin ul li span.phone, .main-container .checkin ul li span.email,
 .main-container .directory ul li span.office,
 .main-container .directory ul li span.phone,
@@ -3170,34 +3175,34 @@ body {
   width: 100%;
   padding: 0px 0 0 20px;
 }
-/* line 347, ../../../sass/modules/_main-container.scss */
+/* line 353, ../../../sass/modules/_main-container.scss */
 .main-container .checkin ul li span.office,
 .main-container .directory ul li span.office {
   text-transform: uppercase;
 }
-/* line 351, ../../../sass/modules/_main-container.scss */
+/* line 357, ../../../sass/modules/_main-container.scss */
 .main-container .checkin ul li span.email,
 .main-container .directory ul li span.email {
   padding-top: 8px;
 }
-/* line 362, ../../../sass/modules/_main-container.scss */
+/* line 368, ../../../sass/modules/_main-container.scss */
 .main-container .checkin h2 {
   display: none;
 }
-/* line 367, ../../../sass/modules/_main-container.scss */
+/* line 373, ../../../sass/modules/_main-container.scss */
 .main-container .info #map {
   height: 100%;
 }
 
 @media (min-width: 1300px) {
-  /* line 379, ../../../sass/modules/_main-container.scss */
+  /* line 385, ../../../sass/modules/_main-container.scss */
   .landing,
   .footer,
   .directory {
     display: none !important;
   }
 
-  /* line 383, ../../../sass/modules/_main-container.scss */
+  /* line 389, ../../../sass/modules/_main-container.scss */
   .checkin {
     display: block !important;
     position: absolute;
@@ -3207,58 +3212,58 @@ body {
     height: 100% !important;
     background-color: black !important;
   }
-  /* line 394, ../../../sass/modules/_main-container.scss */
+  /* line 400, ../../../sass/modules/_main-container.scss */
   .checkin ul li {
     width: 100% !important;
     cursor: none !important;
   }
-  /* line 397, ../../../sass/modules/_main-container.scss */
+  /* line 403, ../../../sass/modules/_main-container.scss */
   .checkin ul li:hover {
     background-color: #262626 !important;
   }
-  /* line 402, ../../../sass/modules/_main-container.scss */
+  /* line 408, ../../../sass/modules/_main-container.scss */
   .checkin .user-flex {
     width: 100% !important;
   }
-  /* line 406, ../../../sass/modules/_main-container.scss */
+  /* line 412, ../../../sass/modules/_main-container.scss */
   .checkin .user-info {
     width: 100% !important;
   }
-  /* line 410, ../../../sass/modules/_main-container.scss */
+  /* line 416, ../../../sass/modules/_main-container.scss */
   .checkin .user-container {
     overflow: inherit !important;
   }
-  /* line 414, ../../../sass/modules/_main-container.scss */
+  /* line 420, ../../../sass/modules/_main-container.scss */
   .checkin span.user {
     width: 20% !important;
     height: auto !important;
     overflow: auto !important;
     float: left !important;
   }
-  /* line 420, ../../../sass/modules/_main-container.scss */
+  /* line 426, ../../../sass/modules/_main-container.scss */
   .checkin span.user img {
     width: 100% !important;
     height: 50% !important;
     overflow: inherit !important;
   }
-  /* line 425, ../../../sass/modules/_main-container.scss */
+  /* line 431, ../../../sass/modules/_main-container.scss */
   .checkin .name {
     font-size: 3rem !important;
     text-overflow: none !important;
     max-width: 100% !important;
     width: 100% !important;
   }
-  /* line 431, ../../../sass/modules/_main-container.scss */
+  /* line 437, ../../../sass/modules/_main-container.scss */
   .checkin .title {
     font-size: 2.8rem !important;
     max-width: 100% !important;
     width: 100% !important;
   }
-  /* line 436, ../../../sass/modules/_main-container.scss */
+  /* line 442, ../../../sass/modules/_main-container.scss */
   .checkin .user-info-icon {
     display: none !important;
   }
-  /* line 440, ../../../sass/modules/_main-container.scss */
+  /* line 446, ../../../sass/modules/_main-container.scss */
   .checkin h2 {
     display: block !important;
     font-size: 4rem;
