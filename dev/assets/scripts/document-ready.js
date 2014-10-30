@@ -59,7 +59,7 @@
             switch(city){
             case 'birmingham':
             case 'royal oak':
-            case 'ferndal':
+            case 'ferndale':
             case 'detroit':
             case 'bloomfield hills':
             case 'west bloomfield':
