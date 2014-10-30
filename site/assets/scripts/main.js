@@ -180,6 +180,10 @@
             }
         },
 
+        getUser: function(email){
+
+        },
+
         // Grab data from parse (directory table) and render to directory / checkin div sections
         queryData: function(){
 
@@ -295,11 +299,15 @@
 
         events: function(){
 
-
             pubnub.subscribe({
                 channel: 'my_channel',
                 presence: function(m){console.log('test' + m);},
-                message: function(m){alert(m);}
+                message: function(m){
+                    var message = m.text;
+                    $('.notifications').html('');
+                    $('.notifications').html(message);
+                    $('.notifications').removeClass('slideDownNotify').addClass('slideDownNotify');
+                }
             });
             //console.log(currentUser._serverData.emailVerified)
 
@@ -369,9 +377,28 @@
                         $('.logout').show();
                         $('.user-login h2, .user-login-screen, .user-signup-screen').hide();
 
-                        pubnub.publish({
-                            channel: 'my_channel',
-                            message: username + ' is in the buiding'
+                        //var userData = directory.getUser(user.attributes.email);
+
+                        var UserData = Parse.Object.extend('directory')
+                            , query = new Parse.Query(UserData)
+                            ;
+
+                        query.equalTo('email', user.attributes.email);
+
+                        query.first({
+                            success: function (results) {
+                                var userData = results
+                                    , fName = userData.attributes.fName
+                                    , lName = userData.attributes.lName
+                                    , office = userData.attributes.office
+                                    ;
+
+                                pubnub.publish({
+                                    channel: 'my_channel',
+                                    message: fName + ' ' + lName + ' from the ' + office + ' is in the buiding'
+                                });
+
+                            }
                         });
 
                         location.reload();
