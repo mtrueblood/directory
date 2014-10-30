@@ -299,7 +299,7 @@
             pubnub.subscribe({
                 channel: 'my_channel',
                 presence: function(m){console.log('test' + m);},
-                message: function(m){alert(m.text);}
+                message: function(m){alert(m);}
             });
             //console.log(currentUser._serverData.emailVerified)
 
