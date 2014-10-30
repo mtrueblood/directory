@@ -4,6 +4,12 @@
 
     // Initialize Parse Application
     Parse.initialize('uNtjzJdbGtEmC5n6ZoB3MkYbdlB23i5qeXejOT0O', 'N1wO2Ceogq6ZPld1F6J6N4I6q6P4K8UXgWmI1yyu');
+    var pubnub = PUBNUB.init({
+        publish_key: 'pub-c-2d364555-4032-454d-bd96-2736e9f9d40d',
+        subscribe_key: 'sub-c-bbfbc38a-604f-11e4-b0f7-02ee2ddab7fe'
+    });
+
+
 
     var w = window
         , d = document
@@ -251,6 +257,7 @@
                             if(currentlyAt === window.cur_location){
                                 $('.checkin h3').hide();
                                 $('.checkin ul').append(html);
+
                             }
                         }
 
@@ -288,6 +295,12 @@
 
         events: function(){
 
+
+            pubnub.subscribe({
+                channel: 'my_channel',
+                presence: function(m){console.log('test' + m);},
+                message: function(m){alert(m.text);}
+            });
             //console.log(currentUser._serverData.emailVerified)
 
             // Onload show login or logout
@@ -355,6 +368,12 @@
                     success: function(user) {
                         $('.logout').show();
                         $('.user-login h2, .user-login-screen, .user-signup-screen').hide();
+
+                        pubnub.publish({
+                            channel: 'my_channel',
+                            message: username + ' is in the buiding'
+                        });
+
                         location.reload();
                     },
                     error: function(user, error) {
