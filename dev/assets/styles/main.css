@@ -2767,9 +2767,9 @@ body {
 /* line 19, ../../../sass/modules/_main-container.scss */
 .slideDownNotify {
   -webkit-transform: translateY(-50px);
-  -webkit-animation: slideDown 3.5s 1.0s 1 ease forwards;
+  -webkit-animation: slideDown 2.5s 3.0s 1 ease forwards;
   -moz-transform: translateY(-50px);
-  -moz-animation: slideDown 3.5s 1.0s 1 ease forwards;
+  -moz-animation: slideDown 2.5s 3.0s 1 ease forwards;
 }
 
 @-webkit-keyframes slideDown {
