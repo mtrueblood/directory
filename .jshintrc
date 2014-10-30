@@ -13,7 +13,7 @@
     },
 
     "laxcomma": true,       // Suppresses warnings about comma-first coding style http://www.jshint.com/docs/options/#laxcomma
-    "quotmark": "single",   // Use single quotes http://www.jshint.com/docs/options/#quotmark
+
     "devel": true,          // Defines globals that are used for logging: console, alert, etc http://www.jshint.com/docs/options/#devel
     "browser": true,        // This option defines globals exposed by modern browsers http://www.jshint.com/docs/options/#browser
     "jquery": true,         // This option defines globals exposed by the jQuery JavaScript library http://www.jshint.com/docs/options/#jquery

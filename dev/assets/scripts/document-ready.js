@@ -172,12 +172,20 @@
                                         , fName = userData.attributes.fName
                                         , lName = userData.attributes.lName
                                         , office = userData.attributes.office
+                                        , email = userData.attributes.email
                                         ;
+
+                                    window.visitorEmail = email;
+
 
                                     if(office !== window.cur_location){
                                         pubnub.publish({
                                             channel: 'my_channel',
-                                            message: fName + ' ' + lName + ' from the ' + office + ' office is in the buiding'
+                                            //message: fName + ' ' + lName + ' from the ' + office + ' office is in the buiding'
+                                            message: {
+                                                "message" : "Arrived: " + fName + " " + lName + " from SapientNitro " + office +"",
+                                                "email" : email
+                                            }
                                         });
                                     }
 
@@ -328,10 +336,16 @@
             pubnub.subscribe({
                 channel: 'my_channel',
                 message: function(m){
-                    var message = m;
-                    $('.notifications').html('');
-                    $('.notifications').html(message);
-                    $('.notifications').removeClass('slideDownNotify').addClass('slideDownNotify');
+                    var message = m.message
+                        , email = m.email
+                        ;
+
+                    if(window.visitorEmail !== email){
+
+                        $('.notifications').html('');
+                        $('.notifications').html(message);
+                        $('.notifications').removeClass('slideDownNotify').addClass('slideDownNotify');
+                    }
                 }
             });
             //console.log(currentUser._serverData.emailVerified)
@@ -401,11 +415,6 @@
                     success: function(user) {
                         $('.logout').show();
                         $('.user-login h2, .user-login-screen, .user-signup-screen').hide();
-
-                        //var userData = directory.getUser(user.attributes.email);
-
-
-
                         location.reload();
                     },
                     error: function(user, error) {
