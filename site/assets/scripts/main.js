@@ -301,7 +301,6 @@
 
             pubnub.subscribe({
                 channel: 'my_channel',
-                presence: function(m){console.log('test' + m);},
                 message: function(m){
                     var message = m;
                     $('.notifications').html('');
@@ -401,7 +400,7 @@
                             }
                         });
 
-                        location.reload();
+                        //location.reload();
                     },
                     error: function(user, error) {
                         alert('Error: ' + error.code + ' ' + error.message);
