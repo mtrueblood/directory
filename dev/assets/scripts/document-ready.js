@@ -158,6 +158,32 @@
 
                             contact.set('currentlyAt', location);
                             contact.save();
+
+
+                            var UserData = Parse.Object.extend('directory')
+                                , query = new Parse.Query(UserData)
+                                ;
+
+                            query.equalTo('email', email);
+
+                            query.first({
+                                success: function (results) {
+                                    var userData = results
+                                        , fName = userData.attributes.fName
+                                        , lName = userData.attributes.lName
+                                        , office = userData.attributes.office
+                                        ;
+
+                                    if(office !== window.cur_location){
+                                        pubnub.publish({
+                                            channel: 'my_channel',
+                                            message: fName + ' ' + lName + ' from the ' + office + ' is in the buiding'
+                                        });
+                                    }
+
+                                }
+                            });
+
                         }
                     });
 
@@ -378,29 +404,9 @@
 
                         //var userData = directory.getUser(user.attributes.email);
 
-                        var UserData = Parse.Object.extend('directory')
-                            , query = new Parse.Query(UserData)
-                            ;
 
-                        query.equalTo('email', user.attributes.email);
 
-                        query.first({
-                            success: function (results) {
-                                var userData = results
-                                    , fName = userData.attributes.fName
-                                    , lName = userData.attributes.lName
-                                    , office = userData.attributes.office
-                                    ;
-
-                                pubnub.publish({
-                                    channel: 'my_channel',
-                                    message: fName + ' ' + lName + ' from the ' + office + ' is in the buiding'
-                                });
-
-                            }
-                        });
-
-                        //location.reload();
+                        location.reload();
                     },
                     error: function(user, error) {
                         alert('Error: ' + error.code + ' ' + error.message);
