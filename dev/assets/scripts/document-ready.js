@@ -342,9 +342,12 @@
 
                     if(window.visitorEmail !== email){
 
-                        $('.notifications').html('');
+                        $('.notifications').empty();
                         $('.notifications').html(message);
-                        $('.notifications').removeClass('slideDownNotify').addClass('slideDownNotify');
+                        $('.notifications').addClass('slideDownNotify');
+                        setTimeout(function(){
+                            $('.notifications').removeClass('slideDownNotify').empty();
+                        }, 14000);
                     }
                 }
             });
