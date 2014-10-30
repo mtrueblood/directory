@@ -177,7 +177,7 @@
                                     if(office !== window.cur_location){
                                         pubnub.publish({
                                             channel: 'my_channel',
-                                            message: fName + ' ' + lName + ' from the ' + office + ' is in the buiding'
+                                            message: fName + ' ' + lName + ' from the ' + office + ' office is in the buiding'
                                         });
                                     }
 
