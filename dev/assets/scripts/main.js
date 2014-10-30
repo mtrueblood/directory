@@ -303,7 +303,7 @@
                 channel: 'my_channel',
                 presence: function(m){console.log('test' + m);},
                 message: function(m){
-                    var message = m.text;
+                    var message = m;
                     $('.notifications').html('');
                     $('.notifications').html(message);
                     $('.notifications').removeClass('slideDownNotify').addClass('slideDownNotify');
