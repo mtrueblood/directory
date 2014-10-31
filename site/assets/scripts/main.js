@@ -9,8 +9,6 @@
         subscribe_key: 'sub-c-bbfbc38a-604f-11e4-b0f7-02ee2ddab7fe'
     });
 
-
-
     var w = window
         , d = document
         , e = d.documentElement
@@ -36,8 +34,6 @@
             }
 
             this.events();
-
-
 
         },
 
@@ -158,7 +154,6 @@
 
                             contact.set('currentlyAt', location);
                             contact.save();
-
 
                             var UserData = Parse.Object.extend('directory')
                                 , query = new Parse.Query(UserData)
@@ -419,6 +414,7 @@
                         $('.logout').show();
                         $('.user-login h2, .user-login-screen, .user-signup-screen').hide();
                         location.reload();
+
                     },
                     error: function(user, error) {
                         alert('Error: ' + error.code + ' ' + error.message);
@@ -460,7 +456,7 @@
                             allSections.top = '139px';
                             allSections.height = '56%';
                             allSections.zIndex = '101';
-                            search.display = 'inline';
+                            search.display = 'inline-block';
                             welcome.display = 'none';
                         } else {
 

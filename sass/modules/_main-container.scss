@@ -69,6 +69,8 @@
 
         .office-location {
             min-height: 89px;
+            height: 89px;
+            display: inline-block;
         }
 
         @include bp(small) {
@@ -82,7 +84,7 @@
             top: -65px;
             font-weight: 500;
             clear: both;
-            width: 100%;
+            width: 81%;
             &.welcome {
                 top: 18px;
                 font-weight: 300;
@@ -91,7 +93,7 @@
             &.search {
                 display: none;
                 input {
-                    width: 73%;
+                    width: 90%;
                     font-size: 1rem;
                     position: relative;
                     top: 14px;
@@ -365,7 +367,7 @@
                         font-size: $font20;
                         position: absolute;
                         left: 23px;
-                        left: calc(100% - 57px);
+                        left: calc(100% - 48px);
                         @include bp(small) {
                             left: calc(100% - 30px);
                         }
